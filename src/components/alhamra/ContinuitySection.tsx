@@ -1,7 +1,12 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
 
 const ContinuitySection = () => {
   const { t } = useLanguage();
+  const { ref: headerRef, isInView: headerInView } = useScrollReveal();
+  const { ref: textRef, isInView: textInView } = useScrollReveal();
+  const { ref: timelineRef, isInView: timelineInView } = useScrollReveal();
 
   const timeline = [
     { year: "2005", label: t("continuity.groundbreaking") || "Ground Breaking" },
@@ -18,44 +23,89 @@ const ContinuitySection = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-6">
+        <motion.div 
+          ref={headerRef}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-6"
+        >
           <div className="w-12 h-px bg-border" />
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">05</span>
-        </div>
+        </motion.div>
 
         {/* Section Title */}
-        <h2 className="text-headline font-light tracking-wide text-foreground mb-20">
+        <motion.h2 
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-headline font-light tracking-wide text-foreground mb-20"
+        >
           {t("continuity.title")}
-        </h2>
+        </motion.h2>
 
         {/* Stacked Text Blocks */}
-        <div className="max-w-3xl space-y-12">
-          <p className="text-body-lg text-muted-foreground leading-relaxed">
+        <div ref={textRef} className="max-w-3xl space-y-12">
+          <motion.p 
+            initial="hidden"
+            animate={textInView ? "visible" : "hidden"}
+            variants={revealVariants.fadeUp}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-body-lg text-muted-foreground leading-relaxed"
+          >
             {t("continuity.p1")}
-          </p>
+          </motion.p>
 
-          <p className="text-body-lg text-muted-foreground leading-relaxed">
+          <motion.p 
+            initial="hidden"
+            animate={textInView ? "visible" : "hidden"}
+            variants={revealVariants.fadeUp}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-body-lg text-muted-foreground leading-relaxed"
+          >
             {t("continuity.p2")}
-          </p>
+          </motion.p>
 
           {/* Quote Block */}
-          <blockquote className="relative py-8 my-16">
+          <motion.blockquote 
+            initial="hidden"
+            animate={textInView ? "visible" : "hidden"}
+            variants={revealVariants.slideLeft}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="relative py-8 my-16"
+          >
             <div className="absolute left-0 top-0 bottom-0 w-px bg-foreground" />
             <p className="text-title font-light text-foreground pl-8 lg:pl-12">
               {t("continuity.quote")}
             </p>
-          </blockquote>
+          </motion.blockquote>
         </div>
 
         {/* Timeline */}
-        <div className="mt-32 pt-16 border-t border-border">
+        <motion.div 
+          ref={timelineRef}
+          initial="hidden"
+          animate={timelineInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-32 pt-16 border-t border-border"
+        >
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute top-6 left-0 right-0 h-px bg-border hidden md:block" />
 
             <div className="grid md:grid-cols-3 gap-12 md:gap-8">
               {timeline.map((item, index) => (
-                <div key={index} className="relative text-center md:text-left">
+                <motion.div 
+                  key={index} 
+                  initial="hidden"
+                  animate={timelineInView ? "visible" : "hidden"}
+                  variants={revealVariants.fadeUp}
+                  transition={{ duration: 0.6, delay: 0.3 + index * 0.15 }}
+                  className="relative text-center md:text-left"
+                >
                   {/* Timeline dot */}
                   <div className="hidden md:flex absolute top-4 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-4 h-4 items-center justify-center">
                     <div className="w-3 h-3 bg-background border-2 border-foreground" />
@@ -69,11 +119,11 @@ const ContinuitySection = () => {
                       {item.label}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

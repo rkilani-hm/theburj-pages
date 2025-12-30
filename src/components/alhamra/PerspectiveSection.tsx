@@ -1,26 +1,52 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
 import panoramaCity from "@/assets/panorama-city.jpg";
 
 const PerspectiveSection = () => {
   const { t } = useLanguage();
+  const { ref: headerRef, isInView: headerInView } = useScrollReveal();
+  const { ref: imageRef, isInView: imageInView } = useScrollReveal();
+  const { ref: captionRef, isInView: captionInView } = useScrollReveal();
+  const { ref: viewsRef, isInView: viewsInView } = useScrollReveal();
 
   return (
     <section id="perspective" className="py-section bg-secondary relative">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-6">
+        <motion.div 
+          ref={headerRef}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-6"
+        >
           <div className="w-12 h-px bg-border" />
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">02</span>
-        </div>
+        </motion.div>
 
         {/* Section Title */}
-        <h2 className="text-headline font-light tracking-wide text-foreground mb-20">
+        <motion.h2 
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-headline font-light tracking-wide text-foreground mb-20"
+        >
           {t("perspective.title")}
-        </h2>
+        </motion.h2>
       </div>
 
       {/* Full-width Panoramic Image */}
-      <div className="relative group">
+      <motion.div 
+        ref={imageRef}
+        initial="hidden"
+        animate={imageInView ? "visible" : "hidden"}
+        variants={revealVariants.scaleUp}
+        transition={{ duration: 1, delay: 0.2 }}
+        className="relative group"
+      >
         <div className="aspect-[21/9] overflow-hidden">
           <img
             src={panoramaCity}
@@ -31,27 +57,44 @@ const PerspectiveSection = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent opacity-60" />
           <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-secondary to-transparent" />
         </div>
-      </div>
+      </motion.div>
 
       <div className="container mx-auto px-6 lg:px-12">
         {/* Caption */}
-        <div className="mt-12 max-w-2xl">
+        <motion.div 
+          ref={captionRef}
+          initial="hidden"
+          animate={captionInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-12 max-w-2xl"
+        >
           <blockquote className="relative">
             <span className="absolute -left-6 top-0 text-6xl text-border font-serif">"</span>
             <p className="text-xl lg:text-2xl text-foreground font-light italic leading-relaxed pl-4">
               {t("perspective.caption")}
             </p>
           </blockquote>
-        </div>
+        </motion.div>
 
         {/* View Strip */}
-        <div className="mt-20 grid grid-cols-3 gap-4 lg:gap-6">
+        <motion.div 
+          ref={viewsRef}
+          initial="hidden"
+          animate={viewsInView ? "visible" : "hidden"}
+          className="mt-20 grid grid-cols-3 gap-4 lg:gap-6"
+        >
           {[
             { label: t("perspective.view1") || "Dawn", time: "06:00" },
             { label: t("perspective.view2") || "Noon", time: "12:00" },
             { label: t("perspective.view3") || "Dusk", time: "18:00" },
           ].map((view, i) => (
-            <div key={i} className="group relative">
+            <motion.div 
+              key={i} 
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+              className="group relative"
+            >
               <div className="aspect-[16/9] overflow-hidden bg-muted">
                 <div 
                   className="w-full h-full transition-transform duration-500 group-hover:scale-105"
@@ -67,9 +110,9 @@ const PerspectiveSection = () => {
                 <span className="text-sm text-muted-foreground">{view.label}</span>
                 <span className="text-xs text-grey-medium font-mono">{view.time}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
