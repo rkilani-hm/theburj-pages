@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const Header = () => {
   const { language, toggleLanguage, t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const sectionIds = ["presence", "perspective", "business", "services", "continuity", "location", "contact"];
+  const activeSection = useScrollSpy(sectionIds, 150);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +20,13 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { key: "nav.tower", href: "#presence" },
-    { key: "nav.perspective", href: "#perspective" },
-    { key: "nav.business", href: "#business" },
-    { key: "nav.services", href: "#services" },
-    { key: "nav.legacy", href: "#continuity" },
-    { key: "nav.location", href: "#location" },
-    { key: "nav.contact", href: "#contact" },
+    { key: "nav.tower", href: "#presence", section: "presence" },
+    { key: "nav.perspective", href: "#perspective", section: "perspective" },
+    { key: "nav.business", href: "#business", section: "business" },
+    { key: "nav.services", href: "#services", section: "services" },
+    { key: "nav.legacy", href: "#continuity", section: "continuity" },
+    { key: "nav.location", href: "#location", section: "location" },
+    { key: "nav.contact", href: "#contact", section: "contact" },
   ];
 
   return (
@@ -53,10 +57,18 @@ const Header = () => {
               <a
                 key={item.key}
                 href={item.href}
-                className="relative text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors duration-300 group"
+                className={`relative text-sm tracking-wide transition-colors duration-300 group ${
+                  activeSection === item.section
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {t(item.key)}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-foreground transition-all duration-300 group-hover:w-full" />
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
+                    activeSection === item.section ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
               </a>
             ))}
           </nav>
@@ -92,7 +104,11 @@ const Header = () => {
                   key={item.key}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-lg text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className={`text-lg transition-colors duration-300 ${
+                    activeSection === item.section
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {t(item.key)}
