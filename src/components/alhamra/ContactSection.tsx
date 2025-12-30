@@ -1,30 +1,59 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
 
 const ContactSection = () => {
   const { t } = useLanguage();
+  const { ref: headerRef, isInView: headerInView } = useScrollReveal();
+  const { ref: formRef, isInView: formInView } = useScrollReveal();
 
   return (
     <section id="contact" className="py-section bg-background relative texture-noise">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-6">
+        <motion.div 
+          ref={headerRef}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-6"
+        >
           <div className="w-12 h-px bg-border" />
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">07</span>
-        </div>
+        </motion.div>
 
         {/* Section Title */}
-        <h2 className="text-headline font-light tracking-wide text-foreground mb-8">
+        <motion.h2 
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-headline font-light tracking-wide text-foreground mb-8"
+        >
           {t("contact.title")}
-        </h2>
+        </motion.h2>
 
-        <p className="text-body-lg text-muted-foreground mb-20 max-w-xl">
+        <motion.p 
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-body-lg text-muted-foreground mb-20 max-w-xl"
+        >
           {t("contact.intro")}
-        </p>
+        </motion.p>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div ref={formRef} className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Contact Form */}
-          <form className="space-y-10">
+          <motion.form 
+            initial="hidden"
+            animate={formInView ? "visible" : "hidden"}
+            variants={revealVariants.slideLeft}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="space-y-10"
+          >
             {/* Name */}
             <div className="group">
               <label className="block text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">
@@ -81,12 +110,23 @@ const ContactSection = () => {
               <span>{t("contact.submit")}</span>
               <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
             </button>
-          </form>
+          </motion.form>
 
           {/* Contact Info */}
-          <div className="lg:pt-16">
+          <motion.div 
+            initial="hidden"
+            animate={formInView ? "visible" : "hidden"}
+            variants={revealVariants.slideRight}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="lg:pt-16"
+          >
             <div className="space-y-10">
-              <div>
+              <motion.div
+                initial="hidden"
+                animate={formInView ? "visible" : "hidden"}
+                variants={revealVariants.fadeUp}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
                 <h3 className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">
                   {t("contact.address") || "Address"}
                 </h3>
@@ -95,16 +135,26 @@ const ContactSection = () => {
                   Sharq, Kuwait City<br />
                   Kuwait
                 </p>
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial="hidden"
+                animate={formInView ? "visible" : "hidden"}
+                variants={revealVariants.fadeUp}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
                 <h3 className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">
                   {t("contact.phone") || "Phone"}
                 </h3>
                 <p className="text-foreground">+965 2227 0000</p>
-              </div>
+              </motion.div>
 
-              <div>
+              <motion.div
+                initial="hidden"
+                animate={formInView ? "visible" : "hidden"}
+                variants={revealVariants.fadeUp}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
                 <h3 className="text-xs text-muted-foreground uppercase tracking-[0.2em] mb-3">
                   {t("contact.hours") || "Business Hours"}
                 </h3>
@@ -112,9 +162,9 @@ const ContactSection = () => {
                   Sunday – Thursday<br />
                   8:00 AM – 6:00 PM
                 </p>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

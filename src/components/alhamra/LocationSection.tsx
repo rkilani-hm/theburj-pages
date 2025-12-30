@@ -1,8 +1,12 @@
 import { Route, Plane, Building, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { motion } from "framer-motion";
+import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
 
 const LocationSection = () => {
   const { t } = useLanguage();
+  const { ref: headerRef, isInView: headerInView } = useScrollReveal();
+  const { ref: contentRef, isInView: contentInView } = useScrollReveal();
 
   const accessPoints = [
     { icon: Route, label: t("location.highway"), detail: t("location.highway.detail") || "Direct access to major routes" },
@@ -14,19 +18,38 @@ const LocationSection = () => {
     <section id="location" className="py-section bg-secondary relative">
       <div className="container mx-auto px-6 lg:px-12">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-6">
+        <motion.div 
+          ref={headerRef}
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-4 mb-6"
+        >
           <div className="w-12 h-px bg-border" />
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">06</span>
-        </div>
+        </motion.div>
 
         {/* Section Title */}
-        <h2 className="text-headline font-light tracking-wide text-foreground mb-20">
+        <motion.h2 
+          initial="hidden"
+          animate={headerInView ? "visible" : "hidden"}
+          variants={revealVariants.fadeUp}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-headline font-light tracking-wide text-foreground mb-20"
+        >
           {t("location.title")}
-        </h2>
+        </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div ref={contentRef} className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Map Placeholder - Stylized */}
-          <div className="relative">
+          <motion.div 
+            initial="hidden"
+            animate={contentInView ? "visible" : "hidden"}
+            variants={revealVariants.scaleUp}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
             <div className="aspect-square lg:aspect-[4/3] bg-muted overflow-hidden">
               {/* Stylized map representation */}
               <div className="w-full h-full relative bg-gradient-to-br from-stone to-stone-warm">
@@ -63,10 +86,16 @@ const LocationSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Text & Access Points */}
-          <div className="space-y-12">
+          <motion.div 
+            initial="hidden"
+            animate={contentInView ? "visible" : "hidden"}
+            variants={revealVariants.slideRight}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="space-y-12"
+          >
             <p className="text-body-lg text-muted-foreground leading-relaxed">
               {t("location.desc")}
             </p>
@@ -74,7 +103,14 @@ const LocationSection = () => {
             {/* Access Points */}
             <div className="space-y-8">
               {accessPoints.map((point, index) => (
-                <div key={index} className="group flex items-start gap-6">
+                <motion.div 
+                  key={index} 
+                  initial="hidden"
+                  animate={contentInView ? "visible" : "hidden"}
+                  variants={revealVariants.fadeUp}
+                  transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                  className="group flex items-start gap-6"
+                >
                   <div className="w-14 h-14 border border-border flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-muted group-hover:border-muted-foreground">
                     <point.icon size={20} className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground" />
                   </div>
@@ -82,10 +118,10 @@ const LocationSection = () => {
                     <h3 className="text-foreground font-medium mb-1">{point.label}</h3>
                     <p className="text-sm text-muted-foreground">{point.detail}</p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
