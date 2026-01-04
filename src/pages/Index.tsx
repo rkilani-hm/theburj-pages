@@ -9,10 +9,15 @@ import ContinuitySection from "@/components/alhamra/ContinuitySection";
 import LocationSection from "@/components/alhamra/LocationSection";
 import ContactSection from "@/components/alhamra/ContactSection";
 import Footer from "@/components/alhamra/Footer";
+import LoadingScreen from "@/components/alhamra/LoadingScreen";
+import { usePageLoad } from "@/hooks/usePageLoad";
 
 const Index = () => {
+  const isLoading = usePageLoad(1800);
+
   return (
     <LanguageProvider>
+      <LoadingScreen isLoading={isLoading} />
       <div className="min-h-screen bg-background overflow-x-hidden">
         <Header />
         <main>
