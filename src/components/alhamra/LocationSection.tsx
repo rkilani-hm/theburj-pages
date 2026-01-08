@@ -2,6 +2,7 @@ import { Route, Plane, Building, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
+import skylineReflection from "@/assets/skyline-reflection.png";
 
 const LocationSection = () => {
   const { t } = useLanguage();
@@ -42,48 +43,30 @@ const LocationSection = () => {
         </motion.h2>
 
         <div ref={contentRef} className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Map Placeholder - Stylized */}
+          {/* Location Image */}
           <motion.div 
             initial="hidden"
             animate={contentInView ? "visible" : "hidden"}
             variants={revealVariants.scaleUp}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative group"
           >
             <div className="aspect-square lg:aspect-[4/3] bg-muted overflow-hidden">
-              {/* Stylized map representation */}
-              <div className="w-full h-full relative bg-gradient-to-br from-stone to-stone-warm">
-                {/* Grid pattern */}
-                <div className="absolute inset-0 architectural-grid opacity-30" />
-                
-                {/* Location pin */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="relative">
-                    <div className="w-16 h-16 rounded-full border-2 border-foreground/20 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full border-2 border-foreground/40 flex items-center justify-center">
-                        <MapPin size={16} className="text-foreground" />
-                      </div>
-                    </div>
-                    {/* Pulse effect */}
-                    <div className="absolute inset-0 rounded-full border-2 border-foreground/10 animate-ping" style={{ animationDuration: "2s" }} />
-                  </div>
-                </div>
-
-                {/* Abstract roads */}
-                <div className="absolute inset-0">
-                  <div className="absolute top-1/4 left-0 right-0 h-px bg-border" />
-                  <div className="absolute top-2/3 left-0 right-0 h-px bg-border" />
-                  <div className="absolute top-0 bottom-0 left-1/3 w-px bg-border" />
-                  <div className="absolute top-0 bottom-0 right-1/4 w-px bg-border" />
-                </div>
-
-                {/* Location label */}
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              <img
+                src={skylineReflection}
+                alt="Kuwait City skyline with Al Hamra Tower"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              {/* Overlay with location info */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <MapPin size={14} className="text-white/80" />
+                  <p className="text-xs uppercase tracking-[0.2em] text-white/80">
                     29.3759° N, 47.9774° E
                   </p>
-                  <p className="text-sm text-foreground mt-1">Kuwait City, Kuwait</p>
                 </div>
+                <p className="text-lg text-white font-light">Kuwait City, Kuwait</p>
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,9 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
-import panoramaCity from "@/assets/panorama-city.jpg";
+import kuwaitPanorama from "@/assets/kuwait-panorama-sunset.png";
+import towerCityscape from "@/assets/tower-cityscape.png";
+import kuwaitMarina from "@/assets/kuwait-marina-dusk.png";
 
 const PerspectiveSection = () => {
   const { t } = useLanguage();
@@ -49,8 +51,8 @@ const PerspectiveSection = () => {
       >
         <div className="aspect-[21/9] overflow-hidden">
           <img
-            src={panoramaCity}
-            alt="Kuwait City panoramic view"
+            src={kuwaitPanorama}
+            alt="Kuwait City panoramic view at sunset"
             className="w-full h-full object-cover transition-transform duration-1000 ease-out-expo group-hover:scale-[1.02]"
           />
           {/* Gradient overlays */}
@@ -85,9 +87,9 @@ const PerspectiveSection = () => {
           className="mt-20 grid grid-cols-3 gap-4 lg:gap-6"
         >
           {[
-            { label: t("perspective.view1") || "Dawn", time: "06:00" },
-            { label: t("perspective.view2") || "Noon", time: "12:00" },
-            { label: t("perspective.view3") || "Dusk", time: "18:00" },
+            { label: t("perspective.view1") || "Dawn", time: "06:00", image: kuwaitPanorama },
+            { label: t("perspective.view2") || "Noon", time: "12:00", image: towerCityscape },
+            { label: t("perspective.view3") || "Dusk", time: "18:00", image: kuwaitMarina },
           ].map((view, i) => (
             <motion.div 
               key={i} 
@@ -96,12 +98,11 @@ const PerspectiveSection = () => {
               className="group relative"
             >
               <div className="aspect-[16/9] overflow-hidden bg-muted">
-                <div 
-                  className="w-full h-full transition-transform duration-500 group-hover:scale-105"
+                <img 
+                  src={view.image}
+                  alt={view.label}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{
-                    backgroundImage: `url(${panoramaCity})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: `${(i + 1) * 25}% center`,
                     filter: i === 0 ? "brightness(0.7) saturate(0.8)" : i === 2 ? "brightness(0.9) saturate(1.2) sepia(0.1)" : "none"
                   }}
                 />
