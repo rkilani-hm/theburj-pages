@@ -1,7 +1,8 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
-import towerDetail from "@/assets/tower-detail.jpg";
+import towerSunset from "@/assets/tower-sunset.png";
+import towerBW from "@/assets/tower-bw-1.png";
 
 const PresenceSection = () => {
   const { t } = useLanguage();
@@ -60,24 +61,40 @@ const PresenceSection = () => {
             </p>
           </motion.div>
 
-          {/* Image */}
+          {/* Images Grid */}
           <motion.div 
             ref={imageRef}
             initial="hidden"
             animate={imageInView ? "visible" : "hidden"}
             variants={revealVariants.slideRight}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative group"
+            className="space-y-6"
           >
-            <div className="aspect-[4/5] overflow-hidden bg-muted">
-              <img
-                src={towerDetail}
-                alt="Al Hamra Tower architectural detail"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"
-              />
+            <div className="relative group">
+              <div className="aspect-[4/5] overflow-hidden bg-muted">
+                <img
+                  src={towerSunset}
+                  alt="Al Hamra Tower at sunset"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-full h-full border border-border -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
             </div>
-            {/* Decorative frame */}
-            <div className="absolute -top-4 -right-4 w-full h-full border border-border -z-10 transition-transform duration-500 group-hover:translate-x-2 group-hover:translate-y-2" />
+            <div className="grid grid-cols-2 gap-4">
+              <div className="aspect-square overflow-hidden bg-muted">
+                <img
+                  src={towerBW}
+                  alt="Al Hamra Tower architectural detail"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              <div className="aspect-square overflow-hidden bg-muted flex items-center justify-center border border-border">
+                <div className="text-center p-4">
+                  <span className="text-4xl font-light text-foreground">412m</span>
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-2">Architectural Height</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
 

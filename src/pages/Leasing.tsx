@@ -4,6 +4,9 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Building2, Ruler, Users, Calendar, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import towerAerial from "@/assets/tower-aerial.png";
+import skylinePalms from "@/assets/skyline-palms.png";
+import towerTopClouds from "@/assets/tower-top-clouds.png";
 
 const Leasing = () => {
   const { t } = useLanguage();
@@ -44,24 +47,47 @@ const Leasing = () => {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-24 lg:py-32 bg-stone-50">
-          <div className="container mx-auto px-6 lg:px-12">
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="max-w-4xl"
-            >
-              <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6 block">
-                {t("leasing.subtitle")}
-              </span>
-              <h1 className="text-4xl lg:text-6xl font-light tracking-tight mb-8">
-                {t("leasing.title")}
-              </h1>
-              <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                {t("leasing.intro")}
-              </p>
-            </motion.div>
+        <section className="py-24 lg:py-32 bg-secondary relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={towerAerial} 
+              alt="Al Hamra Tower aerial view" 
+              className="w-full h-full object-cover opacity-20"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/90 to-secondary/70" />
+          </div>
+          <div className="container mx-auto px-6 lg:px-12 relative z-10">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6 block">
+                  {t("leasing.subtitle")}
+                </span>
+                <h1 className="text-4xl lg:text-6xl font-light tracking-tight mb-8">
+                  {t("leasing.title")}
+                </h1>
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed">
+                  {t("leasing.intro")}
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="hidden lg:block"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={skylinePalms} 
+                    alt="Kuwait City skyline" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -137,8 +163,15 @@ const Leasing = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 lg:py-32">
-          <div className="container mx-auto px-6 lg:px-12 text-center">
+        <section className="py-24 lg:py-32 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img 
+              src={towerTopClouds} 
+              alt="Al Hamra Tower top view" 
+              className="w-full h-full object-cover opacity-10"
+            />
+          </div>
+          <div className="container mx-auto px-6 lg:px-12 text-center relative z-10">
             <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6">
               {t("leasing.cta.title")}
             </h2>
