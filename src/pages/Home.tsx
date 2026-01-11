@@ -108,15 +108,28 @@ const Home = () => {
                   animate={featuresInView ? "visible" : "hidden"}
                   variants={revealVariants.fadeUp}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
-                  className="text-center lg:text-left"
+                  whileHover={{ y: -8, transition: { duration: 0.3, ease: "easeOut" } }}
+                  className="text-center lg:text-left p-8 rounded-sm border border-transparent hover:border-border hover:bg-background/50 transition-colors duration-500 cursor-default group"
                 >
-                  <p className="text-5xl lg:text-6xl font-light text-foreground mb-2 tracking-tight">
+                  <motion.p 
+                    className="text-5xl lg:text-6xl font-light text-foreground mb-2 tracking-tight transition-colors duration-300 group-hover:text-primary"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={featuresInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.8, delay: 0.3 + index * 0.15, ease: "easeOut" }}
+                  >
                     {feature.number}
-                  </p>
-                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                  </motion.p>
+                  <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4 transition-colors duration-300 group-hover:text-foreground">
                     {feature.label}
                   </p>
-                  <p className="text-muted-foreground">
+                  <motion.div 
+                    className="w-8 h-px bg-border mb-4 mx-auto lg:mx-0 transition-all duration-500 group-hover:w-16 group-hover:bg-primary"
+                    initial={{ scaleX: 0 }}
+                    animate={featuresInView ? { scaleX: 1 } : { scaleX: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
+                    style={{ originX: 0 }}
+                  />
+                  <p className="text-muted-foreground transition-colors duration-300 group-hover:text-foreground/80">
                     {feature.description}
                   </p>
                 </motion.div>
