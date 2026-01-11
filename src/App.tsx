@@ -8,6 +8,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import PageLayout from "./layouts/PageLayout";
 import PageTransition from "./components/alhamra/PageTransition";
 import ScrollToTop from "./components/alhamra/ScrollToTop";
+import FloatingContact from "./components/alhamra/FloatingContact";
 import Home from "./pages/Home";
 import Tower from "./pages/Tower";
 import Perspective from "./pages/Perspective";
@@ -50,6 +51,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
+          <FloatingContact />
           <PageLayout>
             <AnimatedRoutes />
           </PageLayout>
