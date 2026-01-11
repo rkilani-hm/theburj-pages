@@ -146,7 +146,7 @@ const Leasing = () => {
           </div>
         </section>
 
-        {/* Floor Plans */}
+        {/* Space Configurations */}
         <section className="py-24 lg:py-32 bg-secondary">
           <div className="container mx-auto px-6 lg:px-12">
             <motion.div
@@ -154,61 +154,88 @@ const Leasing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="mb-16"
+              className="mb-20 max-w-3xl"
             >
-              <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-4">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-16 h-px bg-border" />
+                <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                  {t("leasing.configurations") || "Configurations"}
+                </span>
+              </div>
+              <h2 className="text-3xl lg:text-4xl font-light tracking-tight mb-6">
                 {t("leasing.plans.title")}
               </h2>
-              <p className="text-muted-foreground max-w-2xl">
+              <p className="text-body-lg text-muted-foreground leading-relaxed">
                 {t("leasing.plans.desc") || "Flexible configurations designed to accommodate businesses of every scale, from boutique operations to multinational headquarters."}
               </p>
             </motion.div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-0">
               {floorPlans.map((plan, index) => (
                 <motion.div
                   key={plan.type}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`group border p-8 transition-all duration-500 ${
-                    plan.highlighted 
-                      ? 'border-foreground bg-background' 
-                      : 'border-border hover:border-foreground bg-background/50 hover:bg-background'
-                  }`}
+                  className="group border-t border-border py-12 first:border-t-0"
                 >
-                  {plan.highlighted && (
-                    <span className="text-xs uppercase tracking-[0.2em] text-primary mb-4 block">
-                      {t("leasing.popular") || "Most Popular"}
-                    </span>
-                  )}
-                  <div className="mb-6">
-                    <h3 className="text-xl font-light mb-2">{plan.type}</h3>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-light">{plan.size}</span>
-                      <span className="text-sm text-muted-foreground">{plan.unit}</span>
+                  <div className="grid lg:grid-cols-12 gap-8 items-start">
+                    {/* Plan Number */}
+                    <div className="lg:col-span-1">
+                      <span className="text-xs text-muted-foreground tracking-wider">
+                        0{index + 1}
+                      </span>
                     </div>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <Check size={14} className="text-foreground" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="pt-6 border-t border-border flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">
-                      {plan.available} {t("leasing.available")}
-                    </span>
-                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Plan Title & Size */}
+                    <div className="lg:col-span-4">
+                      <h3 className="text-2xl lg:text-3xl font-light tracking-tight mb-3 group-hover:text-foreground/80 transition-colors duration-300">
+                        {plan.type}
+                      </h3>
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-lg text-muted-foreground">{plan.size}</span>
+                        <span className="text-sm text-muted-foreground/70">{plan.unit}</span>
+                      </div>
+                    </div>
+                    
+                    {/* Features */}
+                    <div className="lg:col-span-5">
+                      <div className="flex flex-wrap gap-x-6 gap-y-2">
+                        {plan.features.map((feature, i) => (
+                          <span 
+                            key={i} 
+                            className="text-sm text-muted-foreground relative before:content-[''] before:absolute before:-left-3 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-muted-foreground/50 before:rounded-full first:before:hidden"
+                          >
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Availability */}
+                    <div className="lg:col-span-2 lg:text-right">
+                      <span className="text-sm text-muted-foreground">
+                        {plan.available} {t("leasing.available")}
+                      </span>
+                    </div>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Inquiry Note */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-16 pt-12 border-t border-border"
+            >
+              <p className="text-sm text-muted-foreground max-w-2xl">
+                {t("leasing.inquiry.note") || "All configurations are subject to availability and can be customized to meet specific operational requirements. Contact our leasing team for detailed floor plans and specifications."}
+              </p>
+            </motion.div>
           </div>
         </section>
 
