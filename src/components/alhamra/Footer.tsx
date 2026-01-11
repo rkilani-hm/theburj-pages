@@ -106,7 +106,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-20 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-primary-foreground/40">
-            © 2024 Al Hamra Tower. {t("footer.rights")}
+            © 2026 Al Hamra Tower. {t("footer.rights")}
           </p>
           <p className="text-xs text-primary-foreground/40">
             Kuwait City, Kuwait
