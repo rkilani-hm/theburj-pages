@@ -17,6 +17,12 @@ import towerEntranceNight from "@/assets/tower-entrance-night.jpg";
 import towerEntranceFountain from "@/assets/tower-entrance-fountain.jpg";
 import towerNightIlluminated from "@/assets/tower-night-illuminated.jpg";
 import kuwaitSkylineWaterNight from "@/assets/kuwait-skyline-water-night.jpg";
+import towerAerialBalcony from "@/assets/tower-aerial-balcony.jpg";
+import towerKuwaitTowers from "@/assets/tower-kuwait-towers.jpg";
+import towerAerialHarbor from "@/assets/tower-aerial-harbor.jpg";
+import towerAerialNorth from "@/assets/tower-aerial-north.jpg";
+import towerAerialGulf from "@/assets/tower-aerial-gulf.jpg";
+import towerCityContext from "@/assets/tower-city-context.jpg";
 
 const PresenceSection = () => {
   const { t } = useLanguage();
@@ -30,6 +36,7 @@ const PresenceSection = () => {
   const { ref: aerialRef, isInView: aerialInView } = useScrollReveal();
   const { ref: nightRef, isInView: nightInView } = useScrollReveal();
   const { ref: entranceRef, isInView: entranceInView } = useScrollReveal();
+  const { ref: galleryRef, isInView: galleryInView } = useScrollReveal();
 
   const stats = [
     { label: t("presence.height"), value: t("presence.height.value") },
@@ -655,6 +662,150 @@ const PresenceSection = () => {
                 alt="Al Hamra Tower illuminated at night"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Extended Aerial Gallery */}
+      <div className="py-section bg-background texture-noise">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div
+            ref={galleryRef}
+            initial="hidden"
+            animate={galleryInView ? "visible" : "hidden"}
+            variants={revealVariants.fadeUp}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-px bg-border" />
+              <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+                {t("tower.gallery.label")}
+              </span>
+            </div>
+            <h3 className="text-subheadline font-light text-foreground mb-4">
+              {t("tower.gallery.title")}
+            </h3>
+            <p className="text-body text-muted-foreground max-w-2xl">
+              {t("tower.gallery.desc")}
+            </p>
+          </motion.div>
+
+          {/* Masonry-style Gallery */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            {/* Large feature image */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="col-span-2 lg:row-span-2 aspect-[4/3] lg:aspect-auto overflow-hidden group relative"
+            >
+              <img
+                src={towerAerialBalcony}
+                alt="Al Hamra Tower aerial view from balcony"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-lg font-light">{t("tower.gallery.img1")}</p>
+              </div>
+            </motion.div>
+
+            {/* Kuwait Towers landmark */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="aspect-[3/4] overflow-hidden group relative"
+            >
+              <img
+                src={towerKuwaitTowers}
+                alt="Al Hamra Tower with Kuwait Towers"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm font-light">{t("tower.gallery.img2")}</p>
+              </div>
+            </motion.div>
+
+            {/* Harbor view */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="aspect-[3/4] overflow-hidden group relative"
+            >
+              <img
+                src={towerAerialHarbor}
+                alt="Al Hamra Tower aerial with harbor"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm font-light">{t("tower.gallery.img3")}</p>
+              </div>
+            </motion.div>
+
+            {/* North view */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="aspect-[3/4] overflow-hidden group relative"
+            >
+              <img
+                src={towerAerialNorth}
+                alt="Al Hamra Tower north aerial view"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm font-light">{t("tower.gallery.img4")}</p>
+              </div>
+            </motion.div>
+
+            {/* Gulf view - spans 2 columns */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="col-span-2 aspect-[16/9] overflow-hidden group relative"
+            >
+              <img
+                src={towerAerialGulf}
+                alt="Al Hamra Tower with Arabian Gulf"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-lg font-light">{t("tower.gallery.img5")}</p>
+              </div>
+            </motion.div>
+
+            {/* City context */}
+            <motion.div
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="aspect-[3/4] lg:aspect-[4/5] overflow-hidden group relative"
+            >
+              <img
+                src={towerCityContext}
+                alt="Al Hamra Tower in city context"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="text-white text-sm font-light">{t("tower.gallery.img6")}</p>
+              </div>
             </motion.div>
           </div>
         </div>

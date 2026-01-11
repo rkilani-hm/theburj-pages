@@ -89,6 +89,15 @@ const translations: Record<string, Record<Language, string>> = {
   "tower.entrance.p2": { en: "The podium's glass diagrid facade, inspired by traditional Kuwaiti mashrabiya, filters light while creating visual interest at human scale before the tower ascends.", ar: "واجهة الشبكة الزجاجية للمنصة، المستوحاة من المشربية الكويتية التقليدية، تصفي الضوء مع خلق اهتمام بصري على مقياس بشري قبل صعود البرج." },
   "tower.night.title": { en: "Illuminated Presence", ar: "الحضور المُضاء" },
   "tower.night.desc": { en: "After sunset, Al Hamra Tower transforms into a beacon across the Kuwait skyline—its illuminated crown visible from across the Gulf, marking the city's center with quiet authority.", ar: "بعد غروب الشمس، يتحول برج الحمراء إلى منارة عبر أفق الكويت — تاجه المُضاء مرئي من عبر الخليج، يحدد مركز المدينة بسلطة هادئة." },
+  "tower.gallery.label": { en: "Photography", ar: "التصوير" },
+  "tower.gallery.title": { en: "Perspectives on Presence", ar: "منظورات على الحضور" },
+  "tower.gallery.desc": { en: "A curated collection of aerial perspectives capturing Al Hamra Tower's commanding presence within Kuwait City's urban fabric and against the Arabian Gulf horizon.", ar: "مجموعة منتقاة من المنظورات الجوية تلتقط الحضور المهيمن لبرج الحمراء ضمن النسيج الحضري لمدينة الكويت وأمام أفق الخليج العربي." },
+  "tower.gallery.img1": { en: "Balcony Perspective", ar: "منظور الشرفة" },
+  "tower.gallery.img2": { en: "Two Landmarks", ar: "معلمان" },
+  "tower.gallery.img3": { en: "Harbor Gateway", ar: "بوابة الميناء" },
+  "tower.gallery.img4": { en: "Northern Axis", ar: "المحور الشمالي" },
+  "tower.gallery.img5": { en: "Gulf Horizon", ar: "أفق الخليج" },
+  "tower.gallery.img6": { en: "Urban Context", ar: "السياق الحضري" },
 
   // Perspective
   "perspective.title": { en: "Above the City", ar: "فوق المدينة" },
