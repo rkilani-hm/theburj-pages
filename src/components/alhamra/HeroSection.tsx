@@ -29,28 +29,19 @@ const LetterDrop = ({ text, className, delay = 0 }: { text: string; className?: 
   );
 };
 
-const RotatingHeadline = ({ headlines }: { headlines: string[] }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isInitial, setIsInitial] = useState(true);
-
-  useEffect(() => {
-    // After initial animation completes, start the rotation
-    const initialTimeout = setTimeout(() => {
-      setIsInitial(false);
-    }, 2000);
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % headlines.length);
-    }, 20000);
-
-    return () => {
-      clearTimeout(initialTimeout);
-      clearInterval(interval);
-    };
-  }, [headlines.length]);
-
+const RotatingText = ({ 
+  texts, 
+  currentIndex, 
+  isInitial, 
+  initialDelay = 0.5 
+}: { 
+  texts: string[]; 
+  currentIndex: number; 
+  isInitial: boolean; 
+  initialDelay?: number;
+}) => {
   if (isInitial) {
-    return <LetterDrop text={headlines[0]} delay={0.5} />;
+    return <LetterDrop text={texts[0]} delay={initialDelay} />;
   }
 
   return (
@@ -66,15 +57,49 @@ const RotatingHeadline = ({ headlines }: { headlines: string[] }) => {
         }}
         className="inline-block"
       >
-        {headlines[currentIndex]}
+        {texts[currentIndex]}
       </motion.span>
     </AnimatePresence>
   );
 };
 
+const HeroContent = () => {
+  const { t } = useLanguage();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInitial, setIsInitial] = useState(true);
+  
+  const headlines = [t("hero.headline"), t("hero.headline2")];
+  const sublines = [t("hero.subline"), t("hero.subline2")];
+
+  useEffect(() => {
+    const initialTimeout = setTimeout(() => {
+      setIsInitial(false);
+    }, 2000);
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % headlines.length);
+    }, 20000);
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
+    };
+  }, [headlines.length]);
+
+  return (
+    <div className="relative z-10 text-left container mx-auto px-6 lg:px-12 w-full">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground">
+        <RotatingText texts={headlines} currentIndex={currentIndex} isInitial={isInitial} initialDelay={0.5} />
+      </h1>
+      <p className="mt-6 text-body-lg text-black font-light tracking-wide">
+        <RotatingText texts={sublines} currentIndex={currentIndex} isInitial={isInitial} initialDelay={1.2} />
+      </p>
+    </div>
+  );
+};
+
 const HeroSection = () => {
   const { t } = useLanguage();
-  const headlines = [t("hero.headline"), t("hero.headline2")];
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -96,14 +121,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-left container mx-auto px-6 lg:px-12 w-full">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground">
-          <RotatingHeadline headlines={headlines} />
-        </h1>
-        <p className="mt-6 text-body-lg text-black font-light tracking-wide">
-          <LetterDrop text={t("hero.subline")} delay={1.2} />
-        </p>
-      </div>
+      <HeroContent />
 
       {/* Scroll Indicator */}
       <motion.div 
