@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { X } from "lucide-react";
@@ -161,6 +161,8 @@ const TowerVisualization = ({
 }: {
   scrollProgress: any;
 }) => {
+  const [isComplete, setIsComplete] = useState(false);
+  
   // Transform scroll progress to tower height reveal - the mask Y position
   // At scroll 0: mask starts at y=430 (tower hidden), at scroll 1: mask at y=40 (tower fully revealed)
   const maskY = useTransform(scrollProgress, [0, 1], [430, 40]);
@@ -168,6 +170,19 @@ const TowerVisualization = ({
   const glowY = useTransform(scrollProgress, [0, 1], [420, 40]);
   const craneOpacity = useTransform(scrollProgress, [0, 0.1, 0.85, 0.95], [0, 1, 1, 0]);
   const heightMarkerOpacity = useTransform(scrollProgress, [0.8, 1], [0, 1]);
+  const completionOpacity = useTransform(scrollProgress, [0.92, 0.98], [0, 1]);
+  
+  // Track completion state for celebration effect
+  useEffect(() => {
+    const unsubscribe = scrollProgress.on("change", (value: number) => {
+      if (value >= 0.95 && !isComplete) {
+        setIsComplete(true);
+      } else if (value < 0.9 && isComplete) {
+        setIsComplete(false);
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollProgress, isComplete]);
   
   // Floor line opacities
   const floorLineOpacities = Array.from({ length: 20 }).map((_, i) => 
@@ -291,6 +306,75 @@ const TowerVisualization = ({
           <line x1="140" y1="110" x2="180" y2="110" stroke="hsl(var(--muted-foreground))" strokeWidth="2" />
           <line x1="155" y1="110" x2="100" y2="130" stroke="hsl(var(--muted-foreground))" strokeWidth="1" strokeDasharray="3 2" />
         </motion.g>
+
+        {/* Completion Celebration - Shimmer Effect */}
+        <motion.g style={{ opacity: completionOpacity }}>
+          {/* Shimmer gradient overlay */}
+          <defs>
+            <linearGradient id="shimmerGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+              <animate attributeName="y1" values="100%;-100%;100%" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="y2" values="200%;0%;200%" dur="2s" repeatCount="indefinite" />
+            </linearGradient>
+          </defs>
+          
+          {/* Shimmer overlay on tower */}
+          <path
+            d="M70 430 
+               L70 120 
+               Q70 80, 85 60 
+               L85 45 
+               Q100 30, 115 45 
+               L115 60 
+               Q130 80, 130 120 
+               L130 430 
+               Z"
+            fill="url(#shimmerGradient)"
+          />
+        </motion.g>
+
+        {/* Celebration Pulse Rings */}
+        <AnimatePresence>
+          {isComplete && (
+            <>
+              <motion.circle
+                cx="100"
+                cy="40"
+                r="10"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="2"
+                initial={{ r: 10, opacity: 0.8, strokeWidth: 2 }}
+                animate={{ r: 60, opacity: 0, strokeWidth: 0.5 }}
+                transition={{ duration: 1.5, ease: "easeOut", repeat: Infinity, repeatDelay: 0.5 }}
+              />
+              <motion.circle
+                cx="100"
+                cy="40"
+                r="10"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="2"
+                initial={{ r: 10, opacity: 0.6, strokeWidth: 2 }}
+                animate={{ r: 80, opacity: 0, strokeWidth: 0.5 }}
+                transition={{ duration: 1.8, ease: "easeOut", delay: 0.3, repeat: Infinity, repeatDelay: 0.5 }}
+              />
+              <motion.circle
+                cx="100"
+                cy="40"
+                r="10"
+                fill="none"
+                stroke="hsl(var(--primary))"
+                strokeWidth="1.5"
+                initial={{ r: 10, opacity: 0.4, strokeWidth: 1.5 }}
+                animate={{ r: 100, opacity: 0, strokeWidth: 0.3 }}
+                transition={{ duration: 2.1, ease: "easeOut", delay: 0.6, repeat: Infinity, repeatDelay: 0.5 }}
+              />
+            </>
+          )}
+        </AnimatePresence>
       </svg>
 
       {/* Height Marker */}
@@ -301,6 +385,33 @@ const TowerVisualization = ({
         <span className="w-8 h-px bg-primary" />
         <span className="font-light">412m</span>
       </motion.div>
+
+      {/* Completion Badge */}
+      <AnimatePresence>
+        {isComplete && (
+          <motion.div
+            className="absolute -top-2 left-1/2 -translate-x-1/2"
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: -10 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
+            <motion.div
+              className="px-4 py-2 bg-primary text-primary-foreground rounded-full text-xs font-medium tracking-wider uppercase shadow-lg"
+              animate={{ 
+                boxShadow: [
+                  "0 0 0 0 hsla(var(--primary), 0.4)",
+                  "0 0 0 10px hsla(var(--primary), 0)",
+                  "0 0 0 0 hsla(var(--primary), 0)"
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              Complete
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
