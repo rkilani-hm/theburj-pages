@@ -1,20 +1,36 @@
 import { ReactNode } from "react";
-import { LanguageProvider } from "@/contexts/LanguageContext";
-import LoadingScreen from "@/components/alhamra/LoadingScreen";
-import { usePageLoad } from "@/hooks/usePageLoad";
+import TowerLoader from "@/components/alhamra/TowerLoader";
+import { useInitialLoad } from "@/hooks/useInitialLoad";
 
 interface PageLayoutProps {
   children: ReactNode;
 }
 
 const PageLayout = ({ children }: PageLayoutProps) => {
-  const isLoading = usePageLoad(1200);
+  const { isLoading, handleComplete, minDuration } = useInitialLoad({
+    minDuration: 2400,
+    sessionKey: "alhamra_loader_shown",
+  });
 
   return (
-    <LanguageProvider>
-      <LoadingScreen isLoading={isLoading} />
-      {children}
-    </LanguageProvider>
+    <>
+      {isLoading && (
+        <TowerLoader
+          durationMs={minDuration}
+          onComplete={handleComplete}
+          theme="light"
+        />
+      )}
+      <div
+        style={{
+          opacity: isLoading ? 0 : 1,
+          filter: isLoading ? "blur(4px)" : "blur(0px)",
+          transition: "opacity 0.6s ease-out, filter 0.6s ease-out",
+        }}
+      >
+        {children}
+      </div>
+    </>
   );
 };
 
