@@ -364,6 +364,65 @@ const translations: Record<string, Record<Language, string>> = {
   "elevator.stat.max.speed": { en: "Max Speed", ar: "السرعة القصوى" },
   "elevator.closing": { en: "The elevator system transforms vertical distance into moments of transition—efficient, composed, and purposeful.", ar: "يحول نظام المصاعد المسافة العمودية إلى لحظات انتقال—فعالة ومتزنة وهادفة." },
 
+  // Legacy Section
+  "legacy.label": { en: "Heritage", ar: "التراث" },
+  "legacy.title": { en: "From Cinema Grounds to Skyline Icon", ar: "من أرض السينما إلى أيقونة الأفق" },
+  "legacy.subtitle": { en: "Where cultural memory and architectural ambition converge, Al Hamra Tower rises as a living testament to Kuwait's transformation.", ar: "حيث تتلاقى الذاكرة الثقافية والطموح المعماري، يرتفع برج الحمراء كشاهد حي على تحول الكويت." },
+  "legacy.hero.alt": { en: "Kuwait City panorama at sunset", ar: "بانوراما مدينة الكويت عند الغروب" },
+  
+  // Legacy Origins
+  "legacy.origins.heading": { en: "A Place of Gathering, Reborn", ar: "مكان للتجمع، يولد من جديد" },
+  "legacy.origins.p1": { en: "Before the tower reached skyward, this site held a different significance. In the 1960s, it was home to Kuwait's first cinema and entertainment venue—a cultural gathering place where generations of Kuwaitis shared stories, celebrated, and connected.", ar: "قبل أن يمتد البرج نحو السماء، حمل هذا الموقع أهمية مختلفة. في الستينيات، كان موطناً لأول سينما ومكان ترفيه في الكويت—مكان تجمع ثقافي حيث شارك أجيال من الكويتيين القصص واحتفلوا وتواصلوا." },
+  "legacy.origins.p2": { en: "That spirit of gathering endures. What began as a place for community entertainment has evolved into a landmark that anchors business, culture, and civic pride—transforming while honoring what came before.", ar: "روح التجمع هذه تستمر. ما بدأ كمكان للترفيه المجتمعي تطور إلى معلم يرسخ الأعمال والثقافة والفخر المدني—يتحول مع تكريم ما سبقه." },
+  "legacy.origins.quote": { en: "From a place where stories were shown to a place where futures are built.", ar: "من مكان عُرضت فيه القصص إلى مكان تُبنى فيه المستقبل." },
+  "legacy.origins.historic.alt": { en: "Historic view of the site", ar: "منظر تاريخي للموقع" },
+  "legacy.origins.historic.label": { en: "The Site's Heritage", ar: "تراث الموقع" },
+  "legacy.origins.modern.alt": { en: "Al Hamra Tower today", ar: "برج الحمراء اليوم" },
+  "legacy.origins.modern.label": { en: "Present Day", ar: "الوقت الحاضر" },
+
+  // Legacy Timeline
+  "legacy.evolution.heading": { en: "A Story of Transformation", ar: "قصة التحول" },
+  "legacy.evolution.desc": { en: "The journey from cultural landmark to architectural icon spans decades of vision, planning, and purposeful construction.", ar: "رحلة من المعلم الثقافي إلى الأيقونة المعمارية تمتد عبر عقود من الرؤية والتخطيط والبناء الهادف." },
+  "legacy.timeline.cinema": { en: "Cultural Landmark", ar: "معلم ثقافي" },
+  "legacy.timeline.cinema.desc": { en: "Kuwait's first cinema and entertainment district serves as a social gathering point for the city.", ar: "أول سينما ومنطقة ترفيه في الكويت تعمل كنقطة تجمع اجتماعي للمدينة." },
+  "legacy.timeline.groundbreaking": { en: "Ground Breaking", ar: "وضع الأساس" },
+  "legacy.timeline.groundbreaking.desc": { en: "Construction begins on a vision to create Kuwait's tallest and most distinctive tower.", ar: "بدء البناء على رؤية لإنشاء أطول وأميز برج في الكويت." },
+  "legacy.timeline.completion": { en: "Tower Completion", ar: "اكتمال البرج" },
+  "legacy.timeline.completion.desc": { en: "Al Hamra Tower opens, immediately becoming Kuwait's most recognized architectural achievement.", ar: "افتتاح برج الحمراء، ليصبح فوراً أكثر الإنجازات المعمارية شهرة في الكويت." },
+  "legacy.timeline.today": { en: "Today", ar: "اليوم" },
+  "legacy.timeline.icon": { en: "Global Icon", ar: "أيقونة عالمية" },
+  "legacy.timeline.icon.desc": { en: "An internationally celebrated landmark housing Kuwait's leading enterprises.", ar: "معلم معترف به دولياً يستضيف المؤسسات الرائدة في الكويت." },
+
+  // Legacy Design
+  "legacy.design.label": { en: "Achievement", ar: "الإنجاز" },
+  "legacy.design.heading": { en: "A Sculpted Landmark in the Heart of Kuwait City", ar: "معلم منحوت في قلب مدينة الكويت" },
+  "legacy.design.p1": { en: "Designed by world-renowned architects Skidmore, Owings & Merrill, Al Hamra Tower stands as the tallest structure in Kuwait and the tallest carved concrete skyscraper in the world at 413 meters—a singular achievement in structural engineering and sculptural form.", ar: "صممه المعماريون ذوو الشهرة العالمية سكيدمور وأوينغز وميريل، يقف برج الحمراء كأطول هيكل في الكويت وأطول ناطحة سحاب خرسانية منحوتة في العالم بارتفاع ٤١٣ متراً—إنجاز فريد في الهندسة الإنشائية والشكل النحتي." },
+  "legacy.design.p2": { en: "The tower's distinctive 60-degree twist from base to crown was not merely aesthetic ambition—it emerged from rigorous environmental analysis, optimizing solar exposure while creating an ever-changing silhouette that responds to Kuwait's climate and context.", ar: "لم يكن التواء البرج المميز بستين درجة من القاعدة إلى التاج مجرد طموح جمالي—بل نشأ من تحليل بيئي دقيق، يحسن التعرض للشمس مع خلق صورة ظلية متغيرة باستمرار تستجيب لمناخ الكويت وسياقها." },
+  "legacy.stat.height": { en: "Architectural Height", ar: "الارتفاع المعماري" },
+  "legacy.stat.floors": { en: "Total Floors", ar: "إجمالي الطوابق" },
+  "legacy.stat.twist": { en: "Sculptural Twist", ar: "اللفة النحتية" },
+  "legacy.stat.carved": { en: "World's Tallest Carved Tower", ar: "أطول برج منحوت في العالم" },
+  "legacy.design.image.alt": { en: "Al Hamra Tower by SOM architects", ar: "برج الحمراء من تصميم معماريي SOM" },
+  "legacy.design.image.caption": { en: "Designed by Skidmore, Owings & Merrill", ar: "من تصميم سكيدمور وأوينغز وميريل" },
+
+  // Legacy Impact
+  "legacy.impact.label": { en: "Cultural Significance", ar: "الأهمية الثقافية" },
+  "legacy.impact.heading": { en: "Design, Achievement, and Global Recognition", ar: "التصميم والإنجاز والاعتراف العالمي" },
+  "legacy.impact.p1": { en: "Since its completion in 2011, Al Hamra Tower has become an enduring symbol of Kuwait's modern identity—recognized internationally and celebrated for its sculptural form that responds intelligently to climate and urban context.", ar: "منذ اكتماله في ٢٠١١، أصبح برج الحمراء رمزاً دائماً لهوية الكويت الحديثة—معترف به دولياً ومُحتفى به لشكله النحتي الذي يستجيب بذكاء للمناخ والسياق الحضري." },
+  "legacy.impact.p2": { en: "The tower has earned recognition from leading architectural institutions worldwide, establishing Kuwait's presence in the global conversation about innovative high-rise design and sustainable urban development.", ar: "حصل البرج على تقدير من المؤسسات المعمارية الرائدة عالمياً، مؤسساً حضور الكويت في الحوار العالمي حول التصميم المبتكر للمباني الشاهقة والتنمية الحضرية المستدامة." },
+  "legacy.impact.recognition": { en: "International Recognition", ar: "الاعتراف الدولي" },
+  "legacy.impact.image.alt": { en: "Al Hamra Tower illuminated at night", ar: "برج الحمراء مضاء في الليل" },
+
+  // Legacy Heart of the City
+  "legacy.heart.heading": { en: "Legacy in the Heart of the City", ar: "إرث في قلب المدينة" },
+  "legacy.heart.p1": { en: "Situated in the commercial heart of Kuwait City, Al Hamra Tower anchors business, culture, and panoramic views of the Arabian Gulf—bridging past and present while pointing toward an ambitious future.", ar: "يقع في القلب التجاري لمدينة الكويت، يرسخ برج الحمراء الأعمال والثقافة والإطلالات البانورامية على الخليج العربي—جسر بين الماضي والحاضر مع الإشارة نحو مستقبل طموح." },
+  "legacy.heart.gallery1.alt": { en: "Tower in urban context", ar: "البرج في السياق الحضري" },
+  "legacy.heart.gallery2.alt": { en: "Architectural detail", ar: "تفاصيل معمارية" },
+  
+  // Legacy Closing
+  "legacy.closing.quote": { en: "Al Hamra Tower is not merely a building—it is a living legacy, rooted in local culture, shaped by architectural ambition, and reaching toward a future that honors what came before.", ar: "برج الحمراء ليس مجرد مبنى—إنه إرث حي، متجذر في الثقافة المحلية، شكله الطموح المعماري، ويتجه نحو مستقبل يكرم ما سبقه." },
+  "legacy.closing.attribution": { en: "A Testament to Kuwait's Transformation", ar: "شهادة على تحول الكويت" },
+
   // Footer
   "footer.rights": { en: "All rights reserved.", ar: "جميع الحقوق محفوظة." },
   "footer.privacy": { en: "Privacy Policy", ar: "سياسة الخصوصية" },
