@@ -8,6 +8,7 @@ import kuwaitSkylineDay from "@/assets/kuwait-skyline-day.png";
 import towerAerialGulf from "@/assets/tower-aerial-gulf.jpg";
 import towerKuwaitTowers from "@/assets/tower-kuwait-towers.jpg";
 import interiorLobby from "@/assets/interior-lobby.jpg";
+import SkyLobbiesSection from "./SkyLobbiesSection";
 
 const BusinessSection = () => {
   const { t } = useLanguage();
@@ -189,6 +190,9 @@ const BusinessSection = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Sky Lobbies Section */}
+      <SkyLobbiesSection />
 
       {/* Advantages Grid */}
       <div className="py-section bg-secondary">
