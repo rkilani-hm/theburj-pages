@@ -9,7 +9,7 @@ import towerSunset from "@/assets/tower-sunset.png";
 import somTowerSkyline from "@/assets/som-tower-skyline.jpg";
 import towerBw1 from "@/assets/tower-bw-1.png";
 
-const Making = () => {
+const Rising = () => {
   const heroReveal = useScrollReveal();
   const visionReveal = useScrollReveal();
 
@@ -97,7 +97,7 @@ const Making = () => {
               <span className="mx-2">|</span>
               <span>The Tower</span>
               <span className="mx-2">|</span>
-              <span className="text-foreground">Making</span>
+              <span className="text-foreground">Rising</span>
             </nav>
           </div>
 
@@ -112,7 +112,7 @@ const Making = () => {
               className="max-w-3xl"
             >
               <h1 className="text-4xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
-                Al Hamra Tower Making Process
+                Rising: The Al Hamra Story
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
                 From vision to reality: the seven-year journey of creating Kuwait's most iconic landmark
@@ -270,4 +270,4 @@ const Making = () => {
   );
 };
 
-export default Making;
+export default Rising;
