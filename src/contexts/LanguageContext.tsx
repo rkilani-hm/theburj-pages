@@ -319,6 +319,21 @@ const translations: Record<string, Record<Language, string>> = {
   "stats.sqm": { en: "Square Meters", ar: "متر مربع" },
   "stats.sqm.desc": { en: "Of leasable premium workspace", ar: "من المساحات المتميزة القابلة للتأجير" },
 
+  // Journey Timeline
+  "journey.label": { en: "Vertical Journey", ar: "الرحلة العمودية" },
+  "journey.title": { en: "The Ascent Experience", ar: "تجربة الصعود" },
+  "journey.subtitle": { en: "From arrival to executive floors—a choreographed vertical journey through Al Hamra Tower.", ar: "من الوصول إلى الطوابق التنفيذية—رحلة عمودية منسقة عبر برج الحمراء." },
+  "journey.floor": { en: "Floor", ar: "طابق" },
+  "journey.ground.title": { en: "Grand Arrival", ar: "الوصول الكبير" },
+  "journey.ground.desc": { en: "The tower's dramatic lobby welcomes visitors with soaring ceilings, cascading water, and immediate access to express elevators.", ar: "ترحب ردهة البرج المهيبة بالزوار بأسقف شاهقة ومياه متدفقة ووصول فوري للمصاعد السريعة." },
+  "journey.sky30.title": { en: "Mid-Rise Transfer", ar: "انتقال المستوى المتوسط" },
+  "journey.sky30.desc": { en: "The first sky lobby offers panoramic orientation and connects express service to local elevators serving floors 20-40.", ar: "توفر الردهة السماوية الأولى توجيهاً بانورامياً وتربط الخدمة السريعة بالمصاعد المحلية التي تخدم الطوابق ٢٠-٤٠." },
+  "journey.sky55.title": { en: "High-Rise Gateway", ar: "بوابة المستوى العالي" },
+  "journey.sky55.desc": { en: "The second sky lobby serves as the gateway to executive floors, with unobstructed Gulf views and refined waiting areas.", ar: "تعمل الردهة السماوية الثانية كبوابة للطوابق التنفيذية، مع إطلالات خليجية مفتوحة ومناطق انتظار راقية." },
+  "journey.offices.title": { en: "Executive Floors", ar: "الطوابق التنفيذية" },
+  "journey.offices.desc": { en: "The tower's premium office levels—where industry leaders operate with commanding views across Kuwait City and beyond.", ar: "طوابق المكاتب المتميزة في البرج—حيث يعمل قادة الصناعة مع إطلالات آسرة عبر مدينة الكويت وما وراءها." },
+  "journey.closing": { en: "Every vertical transition reinforces the building's commitment to a composed, high-performance business experience.", ar: "كل انتقال عمودي يعزز التزام المبنى بتجربة أعمال متزنة وعالية الأداء." },
+
   // Footer
   "footer.rights": { en: "All rights reserved.", ar: "جميع الحقوق محفوظة." },
   "footer.privacy": { en: "Privacy Policy", ar: "سياسة الخصوصية" },

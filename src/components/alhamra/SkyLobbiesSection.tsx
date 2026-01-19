@@ -5,6 +5,7 @@ import { ArrowUpRight, Compass, Users, Building } from "lucide-react";
 import somObservation from "@/assets/som-observation.jpg";
 import somLobby from "@/assets/som-lobby.jpg";
 import kuwaitPanoramaSunset from "@/assets/kuwait-panorama-sunset.png";
+import JourneyTimeline from "./JourneyTimeline";
 
 const SkyLobbiesSection = () => {
   const { t } = useLanguage();
@@ -250,6 +251,9 @@ const SkyLobbiesSection = () => {
           </p>
         </motion.div>
       </div>
+
+      {/* Journey Timeline */}
+      <JourneyTimeline />
     </div>
   );
 };
