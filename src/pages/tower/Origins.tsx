@@ -12,6 +12,8 @@ import towerCityContext from "@/assets/tower-city-context.jpg";
 import constructionFoundation from "@/assets/construction-foundation.jpg";
 import constructionSteel from "@/assets/construction-steel.jpg";
 import constructionFacade from "@/assets/construction-facade.jpg";
+import skylineParkPanorama from "@/assets/skyline-park-panorama.jpg";
+import waterfrontPromenade from "@/assets/waterfront-promenade.jpg";
 
 const Origins = () => {
   const heroReveal = useScrollReveal();
@@ -20,6 +22,7 @@ const Origins = () => {
   const foundersReveal = useScrollReveal();
   const galleryReveal = useScrollReveal();
   const constructionReveal = useScrollReveal();
+  const competitionReveal = useScrollReveal();
 
   const milestones = [
     { 
@@ -43,13 +46,13 @@ const Origins = () => {
     { 
       year: "2007", 
       title: "Foundation Complete",
-      event: "The massive foundation system is completed, featuring one of the largest continuous concrete pours in Middle East history.",
-      detail: "The mat foundation spans over 5,800 square meters."
+      event: "The massive 5,800m² foundation mat is completed, biased north to match the tower's offset center of mass.",
+      detail: "Research paper presented at Structural Engineers World Congress."
     },
     { 
       year: "2008", 
       title: "Rising Above",
-      event: "The reinforced concrete core reaches the 40th floor, making the tower visible across Kuwait City.",
+      event: "Composite columns with embedded W360 steel sections complete to Level 29. Core reaches 40th floor.",
       detail: "Self-climbing formwork technology accelerated vertical construction."
     },
     { 
@@ -61,8 +64,8 @@ const Origins = () => {
     { 
       year: "2010", 
       title: "Envelope Completion",
-      event: "The limestone and glass curtain wall is completed, revealing the tower's final sculptural form.",
-      detail: "The façade features 24,000 square meters of custom-cut limestone panels."
+      event: "24,000m² of custom-cut limestone panels installed on hyperbolic paraboloid surfaces using digital fabrication.",
+      detail: "Fiberglass formwork moulds fabricated directly from 3D digital models."
     },
     { 
       year: "2011", 
@@ -150,6 +153,99 @@ const Origins = () => {
           </div>
         </section>
 
+        {/* The Competition */}
+        <section className="py-24 px-6 lg:px-12 bg-muted/30">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              ref={competitionReveal.ref}
+              initial="hidden"
+              animate={competitionReveal.isInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="grid lg:grid-cols-2 gap-16 items-center"
+            >
+              <div className="space-y-8">
+                <h2 className="text-3xl lg:text-4xl font-light tracking-wide">
+                  The International Competition
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  The international design competition attracted proposals from more than 20 of the 
+                  world's most prestigious architectural firms. Each was challenged to create a 
+                  tower that would capture local culture while pushing engineering boundaries.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  SOM's winning concept stood apart for its unprecedented asymmetric form—a sculptural 
+                  tower that appeared to unfurl like a traditional Kuwaiti bisht robe. The design was 
+                  selected based on its cultural resonance, sustainability, and structural feasibility.
+                </p>
+                <blockquote className="border-l-2 border-primary pl-6 italic text-foreground">
+                  "A significant step forward both in terms of architectural design form and process. 
+                  By leveraging the latest three-dimensional parametric modeling software, SOM brought 
+                  together the realms of free-form design and the super high-rise skyscraper."
+                </blockquote>
+              </div>
+              <div>
+                <img 
+                  src={skylineParkPanorama} 
+                  alt="Kuwait City Park Panorama" 
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-muted-foreground mt-3">Al Hamra Tower rises above the Kuwait City landscape</p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Site Constraints */}
+        <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.8 }}
+              className="grid lg:grid-cols-2 gap-16 items-center"
+            >
+              <div className="order-2 lg:order-1">
+                <img 
+                  src={waterfrontPromenade} 
+                  alt="Waterfront Promenade" 
+                  className="w-full h-auto"
+                />
+                <p className="text-xs text-muted-foreground mt-3">The tower anchors a vibrant urban district</p>
+              </div>
+              <div className="space-y-8 order-1 lg:order-2">
+                <h2 className="text-3xl lg:text-4xl font-light tracking-wide">
+                  Site Constraints & Design Response
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  The space-constrained site at a prominent intersection in Kuwait City center 
+                  presented conflicting requirements: the need to open the southwest quadrant 
+                  toward the retail podium entrance, while focusing premium office spaces 
+                  toward the Gulf views to the north, west, and east.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  The podium and parking structure were already under construction when SOM joined 
+                  the project, adding further complexity. The spiraling geometry elegantly resolved 
+                  both challenges—creating the carved southwest opening while progressively rotating 
+                  floor plates to optimize Gulf views at higher elevations.
+                </p>
+                <div className="grid grid-cols-2 gap-8 pt-4">
+                  <div>
+                    <p className="text-3xl font-light">10,000<span className="text-lg">m²</span></p>
+                    <p className="text-sm text-muted-foreground">Site Area</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-light">20+</p>
+                    <p className="text-sm text-muted-foreground">Competition Entries</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* The Founders' Vision */}
         <section className="py-24 px-6 lg:px-12 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
@@ -206,10 +302,9 @@ const Origins = () => {
                 A Revolutionary Design
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                The design competition attracted proposals from the world's most prestigious architectural 
-                firms. Skidmore, Owings & Merrill's winning concept—a sculptural tower that appears to 
-                unfurl like a traditional Kuwaiti robe—captured the essence of local culture while 
-                pushing the boundaries of structural engineering.
+                The winning concept—a sculptural tower developed by subtracting a quadrant of a typical 
+                filleted square floor plan—captured the essence of local culture while pushing the 
+                boundaries of structural engineering to unprecedented heights.
               </p>
             </motion.div>
             
@@ -222,12 +317,12 @@ const Origins = () => {
                 },
                 { 
                   title: "Structural Innovation", 
-                  description: "The carved-out corner presented unprecedented engineering challenges, requiring innovative solutions in concrete and steel construction.",
+                  description: "The carved-out corner presented unprecedented engineering challenges, requiring hyperbolic paraboloid walls and innovative creep compatibility analysis.",
                   image: towerBwAngle
                 },
                 { 
                   title: "Sustainable Vision", 
-                  description: "Orientation and façade design minimize solar heat gain, reducing energy consumption while maximizing natural light.",
+                  description: "Stone façade to the south provides environmental protection from the desert sun, reducing solar heat gain by 40% while maximizing Gulf views.",
                   image: towerBw2
                 },
               ].map((item, index) => (
@@ -281,21 +376,21 @@ const Origins = () => {
                   phase: "Phase One",
                   title: "Foundation & Excavation",
                   year: "2006-2007",
-                  description: "Deep excavation work and the installation of over 200 concrete piles, driven 30 meters into the bedrock to support the tower's immense weight."
+                  description: "5,800m² foundation mat biased north to match the tower's offset center of mass. Over 200 concrete piles driven 30 meters into bedrock."
                 },
                 {
                   image: constructionSteel,
                   phase: "Phase Two",
-                  title: "Steel Framework",
+                  title: "Composite Structure",
                   year: "2007-2009",
-                  description: "The reinforced concrete core and steel superstructure rose steadily, using self-climbing formwork technology to accelerate vertical construction."
+                  description: "Perimeter columns with embedded W360 steel sections to Level 29. Self-climbing formwork technology accelerated vertical construction of the concrete core."
                 },
                 {
                   image: constructionFacade,
                   phase: "Phase Three",
-                  title: "Façade Installation",
+                  title: "Digital Fabrication",
                   year: "2009-2011",
-                  description: "Skilled craftsmen installed 24,000 square meters of custom-cut limestone panels and high-performance glass to complete the tower's iconic exterior."
+                  description: "24,000m² of custom-cut limestone panels installed using fiberglass formwork moulds fabricated directly from 3D digital models."
                 },
               ].map((item, index) => (
                 <motion.div
@@ -450,7 +545,7 @@ const Origins = () => {
               <div className="inline-flex items-center gap-4 text-sm text-muted-foreground">
                 <span>412 meters</span>
                 <span className="w-px h-4 bg-border" />
-                <span>80 floors</span>
+                <span>74 stories</span>
                 <span className="w-px h-4 bg-border" />
                 <span>7 years</span>
                 <span className="w-px h-4 bg-border" />

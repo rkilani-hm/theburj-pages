@@ -7,13 +7,22 @@ import somTowerDetail from "@/assets/som-tower-detail.jpg";
 import somLobby from "@/assets/som-lobby.jpg";
 import somObservation from "@/assets/som-observation.jpg";
 import somTowerVertical from "@/assets/som-tower-vertical.jpg";
+import lobbyArches from "@/assets/lobby-arches.jpg";
+import entranceDusk from "@/assets/entrance-dusk.jpg";
+import entranceNightFacade from "@/assets/entrance-night-facade.jpg";
+import towerStreetContext from "@/assets/tower-street-context.jpg";
 
 const Architecture = () => {
   const heroReveal = useScrollReveal();
   const featuresReveal = useScrollReveal();
   const lobbyReveal = useScrollReveal();
+  const lamellaReveal = useScrollReveal();
 
   const features = [
+    {
+      title: "The Geometry of Removal",
+      description: "A spiraling geometry developed by subtracting a quadrant of a typical filleted square floor plan. The subtracted portion incrementally rotates at each higher level, creating a mathematically precise hyperbolic paraboloid surface."
+    },
     {
       title: "Sculptural Twist",
       description: "Each floor plate is rotated counterclockwise around the core, creating an ascending, geometric unraveling that defines the tower's iconic silhouette."
@@ -24,12 +33,19 @@ const Architecture = () => {
     },
     {
       title: "Jura Limestone Façade",
-      description: "The south-facing core wall is constructed of richly textured Jura limestone, standing distinct from the three glass-enclosed sides of the tower."
+      description: "The south-facing core wall is constructed of 24,000m² of richly textured Jura limestone, standing distinct from the three glass-enclosed sides of the tower."
     },
     {
       title: "Traditional Bisht Form",
       description: "The asymmetrical form draws inspiration from the traditional bisht robes worn by Kuwaitis, making the tower a culturally resonant icon."
     }
+  ];
+
+  const lamellaCapacity = [
+    { model: "Model 1 (A only)", capacity: "50,000 kN" },
+    { model: "Model 2 (A+B)", capacity: "48,500 kN" },
+    { model: "Model 3 (A+B+C+E)", capacity: "49,500 kN" },
+    { model: "Model 4 (All elements)", capacity: "189,000 kN" },
   ];
 
   return (
@@ -84,8 +100,9 @@ const Architecture = () => {
                   removal, makes the tower a timeless, elegant marker in the heart of Kuwait City.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  The result reveals a rich, monolithic stone at the south wall framed by the 
-                  graceful, twisting "ribbon" walls that gesture toward the sky.
+                  The stone-clad continuous ribbon connects the hyperbolic paraboloid flared walls 
+                  to the roof, gesturing gracefully toward the sky while the rich, monolithic 
+                  limestone of the south wall stands framed by the twisting glass façades.
                 </p>
                 <div className="grid grid-cols-2 gap-6 pt-4 border-t border-border">
                   <div>
@@ -130,7 +147,7 @@ const Architecture = () => {
               <h2 className="text-3xl font-light tracking-wide text-center mb-16">
                 Defining Elements
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
@@ -149,7 +166,7 @@ const Architecture = () => {
           </div>
         </section>
 
-        {/* Lobby Section */}
+        {/* Grand Lobby Section */}
         <section className="py-24 px-6 lg:px-12">
           <div className="container mx-auto max-w-6xl">
             <motion.div
@@ -162,28 +179,142 @@ const Architecture = () => {
             >
               <div className="order-2 lg:order-1">
                 <img 
-                  src={somLobby} 
+                  src={lobbyArches} 
                   alt="Al Hamra Tower Lobby" 
                   className="w-full h-auto"
                 />
-                <p className="text-xs text-muted-foreground mt-3">Photo: Nick Merrick © Hedrich Blessing</p>
+                <p className="text-xs text-muted-foreground mt-3">Lobby interior with lamella bracing structure</p>
               </div>
               <div className="space-y-8 order-1 lg:order-2">
                 <h2 className="text-3xl lg:text-4xl font-light tracking-wide">
                   The Grand Lobby
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  At the base of the mixed-use complex, the main 80-foot lobby on the north side 
-                  of the tower extends from the tower's core to its perimeter frame. Columns along 
-                  the exterior slope inwards, defining the street-level appearance while structurally 
-                  supporting the rest of the tower.
+                  At the base of the mixed-use complex, the main 24-meter high grand lobby on the north 
+                  side of the tower extends from the tower's core to its perimeter frame. Columns along 
+                  the exterior follow a circular arch, moving 7.6 meters outward at ground level.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   The lobby's dramatic scale and carefully orchestrated light create an arrival 
                   experience befitting Kuwait's tallest building.
                 </p>
+                <div className="flex gap-8 pt-4">
+                  <div>
+                    <p className="text-3xl font-light">24<span className="text-lg">m</span></p>
+                    <p className="text-sm text-muted-foreground">Lobby Height</p>
+                  </div>
+                  <div>
+                    <p className="text-3xl font-light">7.6<span className="text-lg">m</span></p>
+                    <p className="text-sm text-muted-foreground">Column Offset</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Lamella Structure */}
+        <section className="py-24 px-6 lg:px-12 bg-muted/30">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              ref={lamellaReveal.ref}
+              initial="hidden"
+              animate={lamellaReveal.isInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="space-y-8">
+                  <h2 className="text-3xl lg:text-4xl font-light tracking-wide">
+                    Revolutionary Lamella Structure
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    The lobby's innovative lamella bracing scheme features 5 distinct element types 
+                    (A, B, C, D, E), each contributing to overall stability. Non-linear buckling 
+                    analysis revealed that the D elements increased structural capacity from 49,500 kN 
+                    to an extraordinary 189,000 kN—a 3.8× improvement.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Parametric modeling using Gehry Technologies' Digital Project software enabled 
+                    fiberglass formwork moulds to be fabricated directly from 3D digital models, 
+                    ensuring precision execution of the complex geometries.
+                  </p>
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-light">Buckling Capacity Analysis</h3>
+                    {lamellaCapacity.map((item, index) => (
+                      <motion.div
+                        key={item.model}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex justify-between items-center py-3 border-b border-border"
+                      >
+                        <span className="text-sm text-muted-foreground">{item.model}</span>
+                        <span className={`font-light ${index === 3 ? 'text-primary text-xl' : ''}`}>
+                          {item.capacity}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <img 
+                    src={somLobby} 
+                    alt="Lamella Structure Detail" 
+                    className="w-full h-auto"
+                  />
+                  <p className="text-xs text-muted-foreground mt-3">Photo: Nick Merrick © Hedrich Blessing</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Entrance Gallery */}
+        <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl font-light tracking-wide text-center mb-16">
+              Arrival Experience
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="md:col-span-2 md:row-span-2"
+              >
+                <img 
+                  src={entranceDusk} 
+                  alt="Tower Entrance at Dusk" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <img 
+                  src={entranceNightFacade} 
+                  alt="Entrance Night Facade" 
+                  className="w-full h-auto"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <img 
+                  src={towerStreetContext} 
+                  alt="Tower Street Context" 
+                  className="w-full h-auto"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -256,9 +387,9 @@ const Architecture = () => {
             <h2 className="text-2xl font-light tracking-wide mb-12">Project Collaborators</h2>
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { name: "SOM", role: "Lead Architect" },
+                { name: "SOM", role: "Lead Architect & Engineer" },
                 { name: "VDA", role: "Associate Architect" },
-                { name: "Al-Jazera Consultants", role: "Local Consultants" },
+                { name: "Gehry Technologies", role: "Digital Project Software" },
                 { name: "Ahmadiah Contracting", role: "General Contractor" },
               ].map((collaborator) => (
                 <div key={collaborator.name} className="text-center">
