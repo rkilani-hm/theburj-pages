@@ -1,6 +1,7 @@
 import Header from "@/components/alhamra/Header";
 import HeroSection from "@/components/alhamra/HeroSection";
 import Footer from "@/components/alhamra/Footer";
+import HomeJourneyTimeline from "@/components/alhamra/HomeJourneyTimeline";
 import { motion } from "framer-motion";
 import { useScrollReveal, revealVariants } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -137,6 +138,9 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Journey Timeline Section - Page Previews */}
+        <HomeJourneyTimeline />
 
         {/* Gallery Section */}
         <section className="py-section bg-background">
