@@ -12,10 +12,12 @@ import entranceDusk from "@/assets/entrance-dusk.jpg";
 import entranceNightFacade from "@/assets/entrance-night-facade.jpg";
 import towerStreetContext from "@/assets/tower-street-context.jpg";
 import LamellaVisualization from "@/components/alhamra/LamellaVisualization";
+import FloorPlanSelector from "@/components/alhamra/FloorPlanSelector";
 
 const Architecture = () => {
   const heroReveal = useScrollReveal();
   const featuresReveal = useScrollReveal();
+  const floorPlanReveal = useScrollReveal();
   const lobbyReveal = useScrollReveal();
   const lamellaReveal = useScrollReveal();
 
@@ -157,6 +159,21 @@ const Architecture = () => {
                   </motion.div>
                 ))}
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Interactive Floor Plan Selector */}
+        <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-5xl">
+            <motion.div
+              ref={floorPlanReveal.ref}
+              initial="hidden"
+              animate={floorPlanReveal.isInView ? "visible" : "hidden"}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <FloorPlanSelector />
             </motion.div>
           </div>
         </section>
