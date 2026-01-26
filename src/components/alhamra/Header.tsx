@@ -25,26 +25,22 @@ const Header = () => {
   }, []);
 
   const towerSubItems = [
-    { key: "nav.tower.overview", href: "/tower", label: { en: "Overview", ar: "نظرة عامة" } },
-    { key: "nav.tower.origins", href: "/tower/origins", label: { en: "Origins", ar: "البدايات" } },
     { key: "nav.tower.rising", href: "/tower/rising", label: { en: "Rising", ar: "الصعود" } },
-    { key: "nav.tower.architecture", href: "/tower/architecture", label: { en: "Architecture & Design", ar: "الهندسة والتصميم" } },
-    { key: "nav.tower.engineering", href: "/tower/engineering", label: { en: "Engineering", ar: "الهندسة الإنشائية" } },
-    { key: "nav.tower.recognition", href: "/tower/recognition", label: { en: "Recognition", ar: "الجوائز" } },
+    { key: "nav.tower.architecture", href: "/tower/architecture", label: { en: "Architectural Design", ar: "التصميم المعماري" } },
+    { key: "nav.tower.engineering", href: "/tower/engineering", label: { en: "Structural Design", ar: "التصميم الإنشائي" } },
+    { key: "nav.tower.recognition", href: "/tower/recognition", label: { en: "Awards", ar: "الجوائز" } },
   ];
 
   const connectSubItems = [
+    { key: "nav.location", href: "/location", label: { en: "Location & Accessibility", ar: "الموقع والوصول" } },
     { key: "nav.leasing", href: "/leasing", label: { en: "Leasing", ar: "التأجير" } },
-    { key: "nav.location", href: "/location", label: { en: "Location", ar: "الموقع" } },
-    { key: "nav.contact", href: "/contact", label: { en: "Contact", ar: "التواصل" } },
+    { key: "nav.contact", href: "/contact", label: { en: "Contact Us", ar: "تواصل معنا" } },
   ];
 
   const navItems = [
-    { key: "nav.perspective", href: "/perspective" },
-    { key: "nav.sustainability", href: "/tower/sustainability", label: { en: "Sustainability", ar: "الاستدامة" } },
     { key: "nav.business", href: "/business" },
     { key: "nav.services", href: "/services" },
-    { key: "nav.legacy", href: "/legacy" },
+    { key: "nav.sustainability", href: "/tower/sustainability", label: { en: "Sustainability", ar: "الاستدامة" } },
   ];
 
   const isActive = (href: string) => location.pathname === href;
