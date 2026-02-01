@@ -1,6 +1,6 @@
 import Header from "@/components/alhamra/Header";
-import TowerDigitalTwinHero from "@/components/alhamra/TowerDigitalTwinHero";
-import SystemPulseSidebar from "@/components/alhamra/SystemPulseSidebar";
+import TowerTabbedDashboard from "@/components/alhamra/TowerTabbedDashboard";
+import CollapsibleSystemPulse from "@/components/alhamra/CollapsibleSystemPulse";
 import ServiceHubDrawers from "@/components/alhamra/ServiceHubDrawers";
 import TrustBadgesFooter from "@/components/alhamra/TrustBadgesFooter";
 import AwardsSection from "@/components/alhamra/AwardsSection";
@@ -11,12 +11,12 @@ const Tower = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
       
-      {/* Fixed System Pulse Sidebar */}
-      <SystemPulseSidebar />
+      {/* Collapsible System Pulse Sidebar */}
+      <CollapsibleSystemPulse />
       
       <main className="pt-24 pb-24">
-        {/* Digital Twin Hero with Interactive Hotspots */}
-        <TowerDigitalTwinHero />
+        {/* Tabbed Dashboard Hero */}
+        <TowerTabbedDashboard />
         
         {/* Interactive Service Hub Drawers */}
         <ServiceHubDrawers />
