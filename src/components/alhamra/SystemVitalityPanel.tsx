@@ -25,7 +25,7 @@ const SystemVitalityPanel = ({ language }: SystemVitalityPanelProps) => {
   return (
     <motion.div
       ref={ref}
-      className="absolute top-28 left-4 lg:left-8 z-40 w-48 lg:w-56"
+      className="fixed top-28 left-4 lg:left-8 z-40 w-48 lg:w-56"
       initial={{ opacity: 0, x: -50 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

@@ -44,7 +44,7 @@ const NetworkStatusPanel = ({ language }: NetworkStatusPanelProps) => {
   return (
     <motion.div
       ref={ref}
-      className="absolute bottom-28 right-4 lg:right-8 z-40 w-52 lg:w-60"
+      className="fixed top-28 right-4 lg:right-8 z-40 w-52 lg:w-60"
       initial={{ opacity: 0, x: 50 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
