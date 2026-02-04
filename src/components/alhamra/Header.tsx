@@ -56,7 +56,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out-expo ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+          ? "glass border-b border-border/50"
           : "bg-transparent"
       }`}
     >
@@ -114,7 +114,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="bg-background/95 backdrop-blur-md border border-border shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
                       {towerSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -192,7 +192,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full right-0 pt-2"
                   >
-                    <div className="bg-background/95 backdrop-blur-md border border-border shadow-lg min-w-[180px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[180px] overflow-hidden">
                       {connectSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -247,7 +247,7 @@ const Header = () => {
             menuOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="py-6 border-t border-border bg-background/95 backdrop-blur-md">
+          <nav className="py-6 border-t border-border/50 glass">
             <div className="flex flex-col gap-2">
               {/* Tower Section - Collapsible */}
               <div>

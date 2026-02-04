@@ -15,8 +15,8 @@ const LetterDrop = ({ text, className, delay = 0 }: { text: string; className?: 
           initial={{ opacity: 0, y: -80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.6,
-            delay: delay + index * 0.04,
+            duration: 1.2,
+            delay: delay + index * 0.05,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="inline-block"
@@ -71,14 +71,19 @@ const HeroContent = () => {
   }, [headlines.length]);
 
   return (
-    <div className="relative z-10 text-left container mx-auto px-6 lg:px-12 w-full">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-foreground">
-        <RotatingText texts={headlines} currentIndex={currentIndex} initialDelay={0.5} />
+    <motion.div 
+      className="relative z-10 text-left container mx-auto px-6 lg:px-12 w-full"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground">
+        <RotatingText texts={headlines} currentIndex={currentIndex} initialDelay={0.8} />
       </h1>
-      <p className="mt-6 text-body-lg text-black font-light tracking-wide">
-        <RotatingText texts={sublines} currentIndex={currentIndex} initialDelay={1.2} />
+      <p className="mt-8 text-body-lg text-foreground/80 font-light tracking-wide">
+        <RotatingText texts={sublines} currentIndex={currentIndex} initialDelay={1.6} />
       </p>
-    </div>
+    </motion.div>
   );
 };
 

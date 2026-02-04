@@ -47,7 +47,7 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        /* Limestone & Light Palette */
+        /* 7-Star Luxury Palette */
         limestone: {
           DEFAULT: "hsl(var(--limestone))",
           warm: "hsl(var(--limestone-warm))",
@@ -57,10 +57,10 @@ export default {
           DEFAULT: "hsl(var(--deep-slate))",
           light: "hsl(var(--slate-light))",
         },
-        bronze: {
-          DEFAULT: "hsl(var(--bronze))",
-          light: "hsl(var(--bronze-light))",
-          dark: "hsl(var(--bronze-dark))",
+        charcoal: {
+          DEFAULT: "hsl(var(--charcoal))",
+          light: "hsl(var(--charcoal-light))",
+          dark: "hsl(var(--charcoal-dark))",
         },
         beige: {
           DEFAULT: "hsl(var(--beige))",
@@ -93,11 +93,14 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         pill: "9999px",
+        sharp: "0px",
+        precise: "2px",
       },
       spacing: {
-        "section": "10rem",
-        "section-md": "7rem",
-        "section-sm": "5rem",
+        "section": "14rem",
+        "section-md": "10rem",
+        "section-sm": "7rem",
+        "luxury": "12rem",
       },
       transitionTimingFunction: {
         "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
