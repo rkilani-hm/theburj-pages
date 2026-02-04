@@ -28,27 +28,27 @@ const TowerHeroSection = () => {
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={revealVariants.fadeUp}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
           className="space-y-8 max-w-4xl mx-auto"
         >
-          {/* Label */}
+          {/* Label - 7-Star Overline */}
           <motion.div
             variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 1.2, delay: 0.2 }}
             className="flex items-center justify-center gap-4"
           >
-            <div className="w-12 h-px bg-border" />
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+            <div className="w-16 hairline" />
+            <span className="overline">
               {t("tower.hero.label")}
             </span>
-            <div className="w-12 h-px bg-border" />
+            <div className="w-16 hairline" />
           </motion.div>
 
-          {/* Headline */}
+          {/* Headline - Tighter tracking */}
           <motion.h1
             variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-foreground"
+            transition={{ duration: 1.5, delay: 0.4 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground"
           >
             {t("tower.hero.headline")}
           </motion.h1>
@@ -56,7 +56,7 @@ const TowerHeroSection = () => {
           {/* Height */}
           <motion.p
             variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 1.5, delay: 0.6 }}
             className="text-2xl md:text-3xl font-light text-foreground/80"
           >
             {t("tower.hero.height")}
@@ -65,7 +65,7 @@ const TowerHeroSection = () => {
           {/* Identity Statement */}
           <motion.p
             variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 1.5, delay: 0.8 }}
             className="text-body-lg text-muted-foreground max-w-2xl mx-auto"
           >
             {t("tower.hero.identity")}
