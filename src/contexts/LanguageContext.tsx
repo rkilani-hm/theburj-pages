@@ -49,16 +49,16 @@ const translations: Record<string, Record<Language, string>> = {
   // Tower Hero Section
   "tower.hero.label": { en: "The Tower", ar: "البرج" },
   "tower.hero.headline": { en: "Al Hamra Business Tower", ar: "برج الحمراء للأعمال" },
-  "tower.hero.height": { en: "A sculptural landmark in the heart of Kuwait City.", ar: "معلم نحتي في قلب مدينة الكويت." },
-  "tower.hero.identity": { en: "Rising above the skyline with a singular carved form, Al Hamra Business Tower represents architectural precision and commercial ambition. Designed to respond to Kuwait's climate and urban context, the tower offers premium office environments within an integrated mixed-use destination.", ar: "يرتفع فوق الأفق بشكل منحوت فريد، يمثل برج الحمراء للأعمال الدقة المعمارية والطموح التجاري. صُمم للاستجابة لمناخ الكويت وسياقها الحضري، يوفر البرج بيئات مكتبية متميزة ضمن وجهة متكاملة متعددة الاستخدامات." },
+  "tower.hero.height": { en: "A sculptural landmark defining Kuwait City's skyline.", ar: "معلم نحتي يُعرّف أفق مدينة الكويت." },
+  "tower.hero.identity": { en: "Al Hamra Business Tower is the tallest building in Kuwait and one of the region's most iconic commercial addresses. Rising approximately 412–413 metres with a sculpted form, the tower blends architectural radiance with climate-responsive engineering to create a workplace destination that is both inspiring and highly functional. Its design maximizes panoramic views while reducing solar heat gain through a performance-driven form that balances openness with environmental efficiency.", ar: "برج الحمراء للأعمال هو أطول مبنى في الكويت وأحد أكثر العناوين التجارية أيقونية في المنطقة. يرتفع حوالي ٤١٢–٤١٣ متراً بشكل منحوت، يمزج البرج الإشعاع المعماري مع الهندسة المستجيبة للمناخ لخلق وجهة عمل ملهمة وعملية للغاية." },
 
   // Integrated Ecosystem Section
   "tower.ecosystem.label": { en: "Integrated Destination", ar: "وجهة متكاملة" },
   "tower.ecosystem.title": { en: "An Integrated Mixed-Use Destination", ar: "وجهة متكاملة متعددة الاستخدامات" },
   "tower.ecosystem.intro": { en: "Al Hamra Business Tower is integrated with a retail and lifestyle destination, forming a complete commercial environment.", ar: "برج الحمراء للأعمال متكامل مع وجهة تجزئة ونمط حياة، مشكلاً بيئة تجارية متكاملة." },
   "tower.ecosystem.business.title": { en: "Business Tower", ar: "برج الأعمال" },
-  "tower.ecosystem.business.floors": { en: "Largest office floor area in Kuwait City", ar: "أكبر مساحة طابق مكتبي في مدينة الكويت" },
-  "tower.ecosystem.business.area": { en: "2,300 sqm Floorplates", ar: "مساحة طابق ٢٣٠٠ م²" },
+  "tower.ecosystem.business.floors": { en: "Sculpted asymmetrical form", ar: "شكل منحوت غير متماثل" },
+  "tower.ecosystem.business.area": { en: "Premium office floor area", ar: "مساحة طابق مكتبي متميزة" },
   "tower.ecosystem.business.desc": { en: "Premium office environments with efficient floor plates allowing flexible configurations for headquarters or multi-tenant layouts.", ar: "بيئات مكتبية متميزة بطوابق فعالة تسمح بتكوينات مرنة للمقرات أو التخطيطات متعددة المستأجرين." },
   "tower.ecosystem.shopping.title": { en: "Retail & Lifestyle", ar: "التجزئة ونمط الحياة" },
   "tower.ecosystem.shopping.levels": { en: "5 Levels", ar: "٥ طوابق" },
@@ -72,7 +72,7 @@ const translations: Record<string, Record<Language, string>> = {
   // Technology Infrastructure
   "tower.infra.label": { en: "Technology", ar: "التقنية" },
   "tower.infra.title": { en: "Technology Infrastructure", ar: "البنية التحتية التقنية" },
-  "tower.infra.intro": { en: "Built for secure, modern business. Dependable connectivity and systems readiness support corporate-level operational demands.", ar: "مبني للأعمال الحديثة والآمنة. اتصال موثوق وجاهزية الأنظمة تدعم المتطلبات التشغيلية للشركات." },
+  "tower.infra.intro": { en: "Modern infrastructure backbone supports connectivity and corporate system readiness.", ar: "العمود الفقري للبنية التحتية الحديثة يدعم الاتصال وجاهزية الأنظمة المؤسسية." },
   "tower.infra.zerocost": { en: "Connectivity Infrastructure", ar: "بنية تحتية للاتصال" },
   "tower.infra.fiber": { en: "Dependable connectivity and systems readiness support corporate-level operational demands.", ar: "اتصال موثوق وجاهزية الأنظمة تدعم المتطلبات التشغيلية للشركات." },
   "tower.infra.backup": { en: "Backup Power", ar: "الطاقة الاحتياطية" },
@@ -85,7 +85,7 @@ const translations: Record<string, Record<Language, string>> = {
   // Service Excellence Section
   "tower.service.label": { en: "Facilities", ar: "المرافق" },
   "tower.service.title": { en: "Facilities & Services", ar: "المرافق والخدمات" },
-  "tower.service.intro": { en: "Facilities designed for continuity. Infrastructure systems are engineered to support reliability, comfort, and uninterrupted operations.", ar: "مرافق مصممة للاستمرارية. أنظمة البنية التحتية مهندسة لدعم الموثوقية والراحة والعمليات المتواصلة." },
+  "tower.service.intro": { en: "State-of-the-art mechanical, life safety, and operational systems support reliable and continuous business performance.", ar: "أنظمة ميكانيكية وسلامة الحياة وتشغيلية حديثة تدعم الأداء التجاري الموثوق والمستمر." },
   "tower.service.polishing": { en: "Cleaning & Maintenance", ar: "التنظيف والصيانة" },
   "tower.service.security": { en: "Security & Access", ar: "الأمان والوصول" },
   "tower.service.bms": { en: "Building Management", ar: "إدارة المبنى" },
@@ -103,7 +103,7 @@ const translations: Record<string, Record<Language, string>> = {
   "tower.trust.iso45001.desc": { en: "Standards protecting all occupants and staff.", ar: "معايير تحمي جميع الشاغلين والموظفين." },
 
   // Tower Page
-  "tower.intro": { en: "Rising above the skyline with a singular carved form, Al Hamra Business Tower represents architectural precision and commercial ambition. Designed to respond to Kuwait's climate and urban context, the tower offers premium office environments within an integrated mixed-use destination.", ar: "يرتفع فوق الأفق بشكل منحوت فريد، يمثل برج الحمراء للأعمال الدقة المعمارية والطموح التجاري." },
+  "tower.intro": { en: "Al Hamra Business Tower is the tallest building in Kuwait and one of the region's most iconic commercial addresses. Rising approximately 412–413 metres with a sculpted form, the tower blends architectural radiance with climate-responsive engineering to create a workplace destination that is both inspiring and highly functional.", ar: "برج الحمراء للأعمال هو أطول مبنى في الكويت وأحد أكثر العناوين التجارية أيقونية في المنطقة." },
   "tower.quote": { en: "A monument to permanence in a world of change.", ar: "نصب تذكاري للديمومة في عالم متغير." },
   "tower.architectural.height": { en: "Architectural Height", ar: "الارتفاع المعماري" },
   "tower.architecture.label": { en: "Architecture", ar: "الهندسة المعمارية" },
@@ -222,9 +222,9 @@ const translations: Record<string, Record<Language, string>> = {
   "business.global.p3": { en: "Everything you need—close, connected, effortless. Retail, dining, and service amenities within the Al Hamra complex reinforce the tower as a complete professional environment.", ar: "كل ما تحتاجه—قريب، متصل، سهل. تعزز مرافق التجزئة والمطاعم والخدمات ضمن مجمع الحمراء البرج كبيئة مهنية متكاملة." },
 
   // Sky Lobbies
-  "skylobbies.label": { en: "Vertical Transit", ar: "التنقل العمودي" },
-  "skylobbies.title": { en: "Sky Lobbies — A Moment Above the City", ar: "الردهات السماوية — لحظة فوق المدينة" },
-  "skylobbies.intro": { en: "On the 30th and 55th floors, the tower's sky lobbies serve as vertical gateways—spaces of transition that connect business zones while offering perspective, pause, and a renewed sense of arrival.", ar: "في الطابقين الثلاثين والخامس والخمسين، تعمل الردهات السماوية كبوابات عمودية—مساحات انتقالية تربط مناطق الأعمال مع توفير المنظور والتوقف وإحساس متجدد بالوصول." },
+  "skylobbies.label": { en: "Vertical Movement", ar: "الحركة العمودية" },
+  "skylobbies.title": { en: "Vertical Movement", ar: "الحركة العمودية" },
+  "skylobbies.intro": { en: "The tower's vertical transportation strategy ensures efficient flow for tenants and visitors with multiple elevators and strategically placed transfer floors, enhancing circulation and day-to-day movement throughout the workspace.", ar: "تضمن استراتيجية النقل العمودي للبرج تدفقاً فعالاً للمستأجرين والزوار مع مصاعد متعددة وطوابق انتقال موضوعة استراتيجياً، مما يعزز الحركة اليومية عبر مكان العمل." },
   "skylobbies.floor": { en: "Floor", ar: "طابق" },
   "skylobbies.floor30.label": { en: "Mid-Rise Lobby", ar: "ردهة الارتفاع المتوسط" },
   "skylobbies.floor30.zone": { en: "Transition to Mid Zones", ar: "انتقال للمناطق الوسطى" },
@@ -249,12 +249,12 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Services
   "services.title": { en: "Services & Facilities", ar: "الخدمات والمرافق" },
-  "services.intro": { en: "Operational support that stays out of the way.", ar: "دعم تشغيلي لا يعترض طريقك." },
+  "services.intro": { en: "Al Hamra Business Tower offers professional property management, advanced security systems, and dedicated tenant support services designed to enhance daily operations and workplace comfort.", ar: "يقدم برج الحمراء للأعمال إدارة عقارات احترافية وأنظمة أمان متقدمة وخدمات دعم مخصصة للمستأجرين." },
   "services.concierge": { en: "Professional property management", ar: "إدارة عقارات احترافية" },
   "services.dining": { en: "Security and controlled access", ar: "الأمان والوصول المحكم" },
   "services.conference": { en: "Cleaning and maintenance services", ar: "خدمات التنظيف والصيانة" },
   "services.wellness": { en: "Tenant coordination support", ar: "دعم تنسيق المستأجرين" },
-  "services.valet": { en: "Parking & visitor services", ar: "خدمات المواقف والزوار" },
+  "services.valet": { en: "Efficient parking & visitor services", ar: "خدمات مواقف وزوار فعالة" },
 
   // Continuity
   "continuity.title": { en: "Continuity", ar: "الاستمرارية" },
@@ -270,14 +270,14 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Location
   "location.title": { en: "Location & Access", ar: "الموقع والوصول" },
-  "location.desc": { en: "Located in Kuwait City's commercial district, Al Hamra Business Tower offers an address defined by both prestige and accessibility.", ar: "يقع في الحي التجاري لمدينة الكويت، يوفر برج الحمراء للأعمال عنواناً يتميز بالمكانة وسهولة الوصول." },
-  "location.highway": { en: "Highway Access", ar: "الوصول للطريق السريع" },
-  "location.airport": { en: "Airport Proximity", ar: "القرب من المطار" },
-  "location.district": { en: "Business District", ar: "منطقة الأعمال" },
+  "location.desc": { en: "Located in Kuwait City's Sharq district, Al Hamra Business Tower provides a prestigious address within the region's most vibrant commercial and civic environment.", ar: "يقع في منطقة الشرق بمدينة الكويت، يوفر برج الحمراء للأعمال عنواناً مرموقاً ضمن أكثر البيئات التجارية والمدنية حيوية في المنطقة." },
+  "location.highway": { en: "Transport Links", ar: "روابط النقل" },
+  "location.airport": { en: "Nearby cultural, dining, and lifestyle destinations", ar: "وجهات ثقافية ومطاعم ونمط حياة قريبة" },
+  "location.district": { en: "Sharq District", ar: "منطقة الشرق" },
 
   // Contact
   "contact.title": { en: "Leasing & General Inquiries", ar: "استفسارات التأجير والعامة" },
-  "contact.intro": { en: "Share your space requirements and preferred timeline. Our leasing team will respond with suitable options.", ar: "شارك متطلبات المساحة والجدول الزمني المفضل. سيرد فريق التأجير لدينا بالخيارات المناسبة." },
+  "contact.intro": { en: "Share your requirements and timeline. Our leasing team will respond with options aligned to your business needs.", ar: "شارك متطلباتك والجدول الزمني. سيرد فريق التأجير لدينا بخيارات تتوافق مع احتياجات أعمالك." },
   "contact.name": { en: "Name", ar: "الاسم" },
   "contact.email": { en: "Email", ar: "البريد الإلكتروني" },
   "contact.subject": { en: "Subject", ar: "الموضوع" },
@@ -287,7 +287,7 @@ const translations: Record<string, Record<Language, string>> = {
   // Leasing
   "leasing.subtitle": { en: "Office Leasing", ar: "تأجير المكاتب" },
   "leasing.title": { en: "Leasing Opportunities", ar: "فرص التأجير" },
-  "leasing.intro": { en: "Lease an office at Kuwait's most iconic business address. Options available for full-floor headquarters, partial floors, and long-term corporate tenancy.", ar: "استأجر مكتباً في عنوان الأعمال الأكثر أيقونية في الكويت. خيارات متاحة لمقرات الطوابق الكاملة والطوابق الجزئية والإيجار المؤسسي طويل الأمد." },
+  "leasing.intro": { en: "Al Hamra Business Tower offers premium office spaces with flexible configurations suitable for corporate headquarters, regional offices, and professional operations.", ar: "يقدم برج الحمراء للأعمال مساحات مكتبية متميزة بتكوينات مرنة مناسبة للمقرات المؤسسية والمكاتب الإقليمية والعمليات المهنية." },
   "leasing.plans.title": { en: "Available Configurations", ar: "التشكيلات المتاحة" },
   "leasing.type.executive": { en: "Executive Suite", ar: "جناح تنفيذي" },
   "leasing.type.full": { en: "Full Floor", ar: "طابق كامل" },
@@ -309,13 +309,13 @@ const translations: Record<string, Record<Language, string>> = {
   "leasing.amenity.conference": { en: "Conference Center", ar: "مركز المؤتمرات" },
   "leasing.amenity.flexible": { en: "Flexible Terms", ar: "شروط مرنة" },
   "leasing.cta.title": { en: "Request Availability & Pricing", ar: "طلب التوفر والأسعار" },
-  "leasing.cta.desc": { en: "Download approved brochures, floor plans, and media materials for internal review.", ar: "قم بتنزيل الكتيبات المعتمدة وخطط الطوابق والمواد الإعلامية للمراجعة الداخلية." },
+  "leasing.cta.desc": { en: "Download brochures, floor plans, and approved materials for internal review.", ar: "قم بتنزيل الكتيبات وخطط الطوابق والمواد المعتمدة للمراجعة الداخلية." },
   "leasing.cta.button": { en: "Request Availability & Pricing", ar: "طلب التوفر والأسعار" },
 
   // Awards
   "awards.label": { en: "Recognition", ar: "التكريم" },
-  "awards.title": { en: "Recognized on the global stage.", ar: "معترف به على المسرح العالمي." },
-  "awards.desc": { en: "CTBUH Audience Award – 10-Year Category. International commercial high-rise recognition. Referenced by leading global tall-building institutions.", ar: "جائزة جمهور CTBUH - فئة العشر سنوات. اعتراف دولي بالمباني التجارية الشاهقة. مرجع لدى المؤسسات العالمية الرائدة للمباني الشاهقة." },
+  "awards.title": { en: "Global Acknowledgement", ar: "اعتراف عالمي" },
+  "awards.desc": { en: "Al Hamra Business Tower has been recognized by leading architectural and development institutions for its design excellence and long-term presence on the global skyline. Awards include the Council on Tall Buildings and Urban Habitat's Best Tall Building – 10 Year Award and multiple international architectural accolades affirming its engineering and aesthetic legacy.", ar: "حظي برج الحمراء للأعمال باعتراف المؤسسات المعمارية والتطويرية الرائدة لتميزه في التصميم وحضوره طويل الأمد على الأفق العالمي." },
   "awards.award1.title": { en: "Best Tall Building Middle East & Africa", ar: "أفضل مبنى شاهق في الشرق الأوسط وأفريقيا" },
   "awards.award1.org": { en: "Council on Tall Buildings and Urban Habitat", ar: "مجلس المباني الشاهقة والموائل الحضرية" },
   "awards.award1.category": { en: "Excellence in structural innovation and urban integration", ar: "التميز في الابتكار الهيكلي والتكامل الحضري" },
@@ -423,15 +423,15 @@ const translations: Record<string, Record<Language, string>> = {
 
   // Legacy Section
   "legacy.label": { en: "Rising with Purpose", ar: "الارتقاء بهدف" },
-  "legacy.title": { en: "Al Hamra Business Tower — Rising with Purpose", ar: "برج الحمراء للأعمال — الارتقاء بهدف" },
-  "legacy.subtitle": { en: "A sculptural tower shaped by climate intelligence, urban ambition, and architectural precision in the heart of Kuwait City's skyline.", ar: "برج نحتي شكّلته الذكاء المناخي والطموح الحضري والدقة المعمارية في قلب أفق مدينة الكويت." },
+  "legacy.title": { en: "Rising with Purpose", ar: "الارتقاء بهدف" },
+  "legacy.subtitle": { en: "Al Hamra Business Tower was conceived as a landmark that responds to its climate and city context through purposeful design.", ar: "صُمم برج الحمراء للأعمال كمعلم يستجيب لمناخه وسياق مدينته من خلال تصميم هادف." },
   "legacy.hero.alt": { en: "Kuwait City panorama at sunset", ar: "بانوراما مدينة الكويت عند الغروب" },
   
   // Legacy Origins
-  "legacy.origins.heading": { en: "A Bold Vision Realized", ar: "رؤية جريئة تتحقق" },
-  "legacy.origins.p1": { en: "Al Hamra Business Tower represents a bold vision realized — a landmark that rises seamlessly from Kuwait City's commercial core. Designed by Skidmore, Owings & Merrill, the tower's unique form responds directly to environmental conditions, maximizing panoramic views while minimizing solar heat gain. Its asymmetrical, carved geometry is not decorative but purposeful: each floor plate is subtly rotated and a portion sculpted away to create an elegant tapering silhouette that balances transparency and enclosure.", ar: "يمثل برج الحمراء للأعمال رؤية جريئة تحققت — معلم يرتفع بسلاسة من القلب التجاري لمدينة الكويت. صممه سكيدمور وأوينغز وميريل، يستجيب شكل البرج الفريد مباشرة للظروف البيئية، معززاً الإطلالات البانورامية مع تقليل اكتساب الحرارة الشمسية. هندسته المنحوتة غير المتماثلة ليست زخرفية بل هادفة: كل طابق يدور بدقة وجزء منه منحوت لخلق صورة ظلية أنيقة متدرجة توازن بين الشفافية والإحاطة." },
-  "legacy.origins.p2": { en: "This performance-driven design transforms solar and climatic challenges into a defining architectural expression. The solid limestone-clad south façade acts as a passive solar shield against intense sun, while the glazed northern, eastern, and western faces offer expansive views toward Kuwait Bay and the wider city.", ar: "يحوّل هذا التصميم القائم على الأداء التحديات الشمسية والمناخية إلى تعبير معماري مميز. تعمل الواجهة الجنوبية المكسوة بالحجر الجيري كدرع شمسي سلبي ضد أشعة الشمس الشديدة، بينما توفر الواجهات الزجاجية الشمالية والشرقية والغربية إطلالات واسعة نحو خليج الكويت والمدينة الأوسع." },
-  "legacy.origins.quote": { en: "Construction began in 2005 and was completed in 2011, delivering a 412-metre (approx.) tower that stands as the tallest building in Kuwait and one of the most distinctive sculptural high-rises in the world.", ar: "بدأ البناء في ٢٠٠٥ واكتمل في ٢٠١١، ليقدم برجاً بارتفاع ٤١٢ متراً تقريباً يقف كأطول مبنى في الكويت وأحد أكثر ناطحات السحاب النحتية تميزاً في العالم." },
+  "legacy.origins.heading": { en: "Purposeful Design", ar: "تصميم هادف" },
+  "legacy.origins.p1": { en: "Designed by Skidmore, Owings & Merrill, its asymmetrical form is generated by a simple operation of removal, creating a dynamic silhouette that maximizes waterfront views and minimizes heat exposure. The solid southern façade, clad in limestone, acts as a passive shield against intense sun, while glazed elevations frame dramatic vistas of Kuwait City and the Arabian Gulf.", ar: "صممه سكيدمور وأوينغز وميريل، شكله غير المتماثل ناتج عن عملية بسيطة من الإزالة، مما يخلق صورة ظلية ديناميكية تعظم إطلالات الواجهة البحرية وتقلل التعرض للحرارة. تعمل الواجهة الجنوبية الصلبة المكسوة بالحجر الجيري كدرع سلبي ضد الشمس الشديدة، بينما تؤطر الواجهات الزجاجية مشاهد درامية لمدينة الكويت والخليج العربي." },
+  "legacy.origins.p2": { en: "Construction began in 2005 and concluded in 2011, resulting in a tower that stands as both an architectural icon and a centre for business excellence.", ar: "بدأ البناء في ٢٠٠٥ واختتم في ٢٠١١، لينتج برجاً يقف كأيقونة معمارية ومركز للتميز في الأعمال." },
+  "legacy.origins.quote": { en: "A tower shaped by climate, craft, and ambition.", ar: "برج شكّله المناخ والحرفة والطموح." },
   "legacy.origins.historic.alt": { en: "Historic view of the site", ar: "منظر تاريخي للموقع" },
   "legacy.origins.historic.label": { en: "The Site's Heritage", ar: "تراث الموقع" },
   "legacy.origins.modern.alt": { en: "Al Hamra Tower today", ar: "برج الحمراء اليوم" },

@@ -24,23 +24,19 @@ const Architecture = () => {
   const features = [
     {
       title: "Architectural Concept",
-      description: "The tower's asymmetrical carved profile responds directly to solar exposure, optimizing comfort while shaping a distinctive skyline identity."
+      description: "The tower's asymmetrical, carved form is a purposeful response to solar exposure and environment. A quarter of each floor plate is strategically removed to reduce heat gain while enhancing views."
     },
     {
-      title: "Solar Strategy",
-      description: "The massing reduces heat gain and enhances shading, transforming environmental constraints into architectural advantage."
+      title: "Solar Response",
+      description: "The south facade's limestone cladding acts as a passive performance measure against the desert sun, reducing interior thermal stress."
     },
     {
-      title: "Vertical Form & Massing",
-      description: "A confident vertical gesture defining Kuwait's skyline."
+      title: "Façade and Structure",
+      description: "Glass facades on three sides frame sweeping vistas, while engineered concrete structure supports the sculpted mass."
     },
     {
-      title: "Façade Systems",
-      description: "Glass curtain wall systems combined with stone cladding on solar-exposed surfaces ensure durability and performance."
-    },
-    {
-      title: "Structural Innovation",
-      description: "High-performance concrete systems engineered to support the tower's sculpted form and vertical demands."
+      title: "Lobby and Arrival",
+      description: "A dramatic column-free lobby of approximately 24 metres height defines the arrival experience."
     }
   ];
 
@@ -66,10 +62,10 @@ const Architecture = () => {
             className="absolute bottom-0 left-0 right-0 p-8 lg:p-16"
           >
             <h1 className="text-4xl lg:text-6xl font-light tracking-wide text-foreground mb-4">
-              Design & Engineering
+              Design That Performs
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Where form follows climate and culture
+              Form, climate, and engineering in service of architecture
             </p>
           </motion.div>
         </section>
