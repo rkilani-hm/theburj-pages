@@ -121,11 +121,10 @@ const Sustainability = () => {
               <span className="text-sm uppercase tracking-widest">Environmental Strategy</span>
               </div>
               <h1 className="text-4xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
-                A climate-led architectural approach.
+                Sustainability & Innovation
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                The tower's carved geometry and façade strategy reduce solar exposure while 
-                enhancing internal comfort.
+                The tower's design integrates climate-responsive features that reduce heat gain and optimize occupant comfort through passive shading and thoughtful façade engineering.
               </p>
             </motion.div>
           </div>

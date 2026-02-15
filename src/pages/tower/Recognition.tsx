@@ -78,10 +78,10 @@ const Recognition = () => {
             className="absolute bottom-0 left-0 right-0 p-8 lg:p-16"
           >
             <h1 className="text-4xl lg:text-6xl font-light tracking-wide text-foreground mb-4">
-              Awards & Recognition
+              Global Acknowledgement
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Recognized on the global stage.
+              Al Hamra Business Tower has been recognized by leading architectural and development institutions for its design excellence and long-term presence on the global skyline.
             </p>
           </motion.div>
         </section>
