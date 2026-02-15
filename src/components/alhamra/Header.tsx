@@ -71,7 +71,7 @@ const Header = () => {
               onMouseLeave={() => setTowerDropdownOpen(false)}
             >
               <button
-                className={`flex items-center gap-1 text-sm font-semibold tracking-wide transition-colors duration-300 ${
+                className={`flex items-center gap-1 text-base font-semibold tracking-wide transition-colors duration-300 ${
                   isTowerActive
                     ? "text-charcoal-dark"
                     : "text-charcoal-light hover:text-charcoal-dark"
@@ -124,7 +124,7 @@ const Header = () => {
               <Link
                 key={item.key}
                 to={item.href}
-                className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
+                className={`text-base font-semibold tracking-wide transition-colors duration-300 ${
                   isActive(item.href)
                     ? "text-charcoal-dark"
                     : "text-charcoal-light hover:text-charcoal-dark"
