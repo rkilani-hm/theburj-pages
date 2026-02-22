@@ -115,7 +115,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
                       {towerSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -125,10 +125,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-foreground"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
+                                ? "text-foreground bg-muted/50 border-l-silk-gold"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
                             }`}
                           >
                             {item.label[language]}
@@ -170,7 +170,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="glass border border-border/50 shadow-lg min-w-[260px] overflow-hidden">
+                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[260px] overflow-hidden">
                       {businessSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -180,10 +180,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-foreground"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
+                                ? "text-foreground bg-muted/50 border-l-silk-gold"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
                             }`}
                           >
                             {item.label[language]}
@@ -225,7 +225,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
                       {experienceSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -235,10 +235,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-foreground"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
+                                ? "text-foreground bg-muted/50 border-l-silk-gold"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
                             }`}
                           >
                             {item.label[language]}
@@ -280,7 +280,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full right-0 pt-2"
                   >
-                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
                       {leasingSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -290,10 +290,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-foreground"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
+                                ? "text-foreground bg-muted/50 border-l-silk-gold"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
                             }`}
                           >
                             {item.label[language]}
