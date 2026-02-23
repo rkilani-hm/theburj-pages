@@ -115,7 +115,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
                       {towerSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -125,10 +125,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-silk-gold"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
+                                ? "text-foreground bg-muted/50 border-l-foreground"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
                             }`}
                           >
                             {item.label[language]}
@@ -170,7 +170,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[260px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[260px] overflow-hidden">
                       {businessSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -180,10 +180,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-silk-gold"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
+                                ? "text-foreground bg-muted/50 border-l-foreground"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
                             }`}
                           >
                             {item.label[language]}
@@ -225,7 +225,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full left-0 pt-2"
                   >
-                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
                       {experienceSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -235,10 +235,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-silk-gold"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
+                                ? "text-foreground bg-muted/50 border-l-foreground"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
                             }`}
                           >
                             {item.label[language]}
@@ -280,7 +280,7 @@ const Header = () => {
                     transition={{ duration: 0.2 }}
                     className="absolute top-full right-0 pt-2"
                   >
-                    <div className="liquid-glass bg-background/90 shadow-lg min-w-[220px] overflow-hidden">
+                    <div className="glass border border-border/50 shadow-lg min-w-[220px] overflow-hidden">
                       {leasingSubItems.map((item, index) => (
                         <motion.div
                           key={item.key}
@@ -290,10 +290,10 @@ const Header = () => {
                         >
                           <Link
                             to={item.href}
-                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-silk-gold/10 last:border-0 border-l-2 ${
+                            className={`block px-5 py-3 text-sm tracking-wide transition-all duration-300 border-b border-border/50 last:border-0 border-l-2 ${
                               isActive(item.href)
-                                ? "text-foreground bg-muted/50 border-l-silk-gold"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-silk-gold/50"
+                                ? "text-foreground bg-muted/50 border-l-foreground"
+                                : "text-muted-foreground hover:text-foreground hover:bg-muted/30 hover:translate-x-1 border-l-transparent hover:border-l-foreground/50"
                             }`}
                           >
                             {item.label[language]}
@@ -332,7 +332,7 @@ const Header = () => {
             menuOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <nav className="py-6 border-t border-silk-gold/20 liquid-glass bg-background/90 rounded-none">
+          <nav className="py-6 border-t border-border/50 glass">
             <div className="flex flex-col gap-2">
               {/* Tower Section - Collapsible */}
               <div>
@@ -370,8 +370,8 @@ const Header = () => {
                               onClick={() => setMenuOpen(false)}
                               className={`block py-2 text-base transition-all duration-300 border-l-2 pl-4 ${
                                 isActive(item.href)
-                                  ? "text-foreground border-silk-gold"
-                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-silk-gold/50"
+                                  ? "text-foreground border-foreground"
+                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-foreground/50"
                               }`}
                             >
                               {item.label[language]}
@@ -384,7 +384,7 @@ const Header = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="h-px bg-silk-gold/15" />
+              <div className="h-px bg-border" />
 
               {/* Business Section - Collapsible */}
               <div>
@@ -422,8 +422,8 @@ const Header = () => {
                               onClick={() => setMenuOpen(false)}
                               className={`block py-2 text-base transition-all duration-300 border-l-2 pl-4 ${
                                 isActive(item.href)
-                                  ? "text-foreground border-silk-gold"
-                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-silk-gold/50"
+                                  ? "text-foreground border-foreground"
+                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-foreground/50"
                               }`}
                             >
                               {item.label[language]}
@@ -436,7 +436,7 @@ const Header = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="h-px bg-silk-gold/15" />
+              <div className="h-px bg-border" />
 
               {/* Experience Section - Collapsible */}
               <div>
@@ -474,8 +474,8 @@ const Header = () => {
                               onClick={() => setMenuOpen(false)}
                               className={`block py-2 text-base transition-all duration-300 border-l-2 pl-4 ${
                                 isActive(item.href)
-                                  ? "text-foreground border-silk-gold"
-                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-silk-gold/50"
+                                  ? "text-foreground border-foreground"
+                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-foreground/50"
                               }`}
                             >
                               {item.label[language]}
@@ -488,7 +488,7 @@ const Header = () => {
                 </AnimatePresence>
               </div>
 
-              <div className="h-px bg-silk-gold/15" />
+              <div className="h-px bg-border" />
 
               {/* Leasing Section - Collapsible */}
               <div>
@@ -526,8 +526,8 @@ const Header = () => {
                               onClick={() => setMenuOpen(false)}
                               className={`block py-2 text-base transition-all duration-300 border-l-2 pl-4 ${
                                 isActive(item.href)
-                                  ? "text-foreground border-silk-gold"
-                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-silk-gold/50"
+                                  ? "text-foreground border-foreground"
+                                  : "text-muted-foreground hover:text-foreground border-transparent hover:border-foreground/50"
                               }`}
                             >
                               {item.label[language]}
