@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import towerVertical from "@/assets/som-tower-vertical.jpg";
 import lobbyArches from "@/assets/lobby-arches.jpg";
 import constructionFoundation from "@/assets/construction-foundation.jpg";
