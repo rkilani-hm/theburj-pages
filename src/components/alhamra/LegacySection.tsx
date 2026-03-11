@@ -394,47 +394,6 @@ const LegacySection = () => {
         </div>
       </div>
 
-      {/* Timeline Section */}
-      <div className="py-16 bg-muted/30">
-        <div className="container mx-auto px-6 lg:px-12">
-
-          {/* Horizontal Timeline */}
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute top-8 left-0 right-0 h-px bg-border hidden lg:block" />
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-              {timeline.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  initial="hidden"
-                  animate={evolutionInView ? "visible" : "hidden"}
-                  variants={revealVariants.fadeUp}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                  className="relative text-center lg:text-start"
-                >
-                  {/* Timeline dot */}
-                  <div className="hidden lg:flex absolute top-6 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0 w-5 h-5 items-center justify-center">
-                    <div className="w-4 h-4 bg-background border-2 border-foreground rounded-full" />
-                  </div>
-
-                  <div className="lg:pt-16 space-y-3">
-                    <p className="text-3xl lg:text-4xl font-light text-foreground tracking-tight">
-                      {item.year}
-                    </p>
-                    <p className="text-sm font-medium uppercase tracking-[0.15em] text-foreground">
-                      {item.label}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
 
 
       {/* Urban & Cultural Impact */}
