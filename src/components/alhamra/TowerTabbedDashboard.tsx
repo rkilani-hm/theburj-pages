@@ -92,7 +92,7 @@ const TowerTabbedDashboard = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden py-16 lg:py-0">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0 architectural-grid" />
       </div>
 
