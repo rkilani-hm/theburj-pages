@@ -30,7 +30,7 @@ const LegacySection = () => {
   const { ref: comparisonRef, isInView: comparisonInView } = useScrollReveal();
   const { ref: foundersRef, isInView: foundersInView } = useScrollReveal();
   const { ref: evolutionRef, isInView: evolutionInView } = useScrollReveal();
-  const { ref: designRef, isInView: designInView } = useScrollReveal();
+  
   const { ref: impactRef, isInView: impactInView } = useScrollReveal();
   const { ref: heartRef, isInView: heartInView } = useScrollReveal();
 
