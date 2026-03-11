@@ -188,7 +188,7 @@ const TowerTabbedDashboard = () => {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: dir === "rtl" ? 30 : -30 }}
                       transition={{ duration: 0.4 }}
-                      className="bg-card border border-border p-8 lg:p-10"
+                      className="relative bg-card border border-border p-8 lg:p-10"
                     >
                       {/* Card Header */}
                       <div className="mb-6">
