@@ -1,7 +1,6 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import towerVertical from "@/assets/som-tower-vertical.jpg";
 import lobbyArches from "@/assets/lobby-arches.jpg";
 import constructionFoundation from "@/assets/construction-foundation.jpg";
@@ -88,6 +87,7 @@ const TowerTabbedDashboard = () => {
   const [activeTab, setActiveTab] = useState("apex");
 
   const activeData = tabsData.find(t => t.id === activeTab) || tabsData[0];
+  const ActiveIcon = activeData.icon;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-background overflow-hidden py-16 lg:py-0">
@@ -121,141 +121,129 @@ const TowerTabbedDashboard = () => {
           {language === "en" ? "Al Hamra Business Tower" : "برج الحمراء للأعمال"}
         </motion.h1>
 
-        {/* Main Dashboard Layout */}
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          {/* Tab Triggers */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center mb-8"
-          >
-            <TabsList className="bg-card border border-border p-1 h-auto overflow-x-auto">
-              {tabsData.map((tab) => {
-                const Icon = tab.icon;
-                return (
-                  <TabsTrigger
-                    key={tab.id}
-                    value={tab.id}
-                    className="px-6 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-muted-foreground data-[state=inactive]:bg-transparent flex items-center gap-2 text-sm transition-all duration-300 whitespace-nowrap"
-                  >
-                    <Icon className="w-4 h-4" />
-                    <span>{tab.label[language]}</span>
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-          </motion.div>
-
-          {/* Content Area */}
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Image - changes per tab */}
-            <div className="relative order-2 lg:order-1">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative aspect-[3/4] max-w-sm mx-auto rounded-sm overflow-hidden shadow-2xl"
+        {/* Tab Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex justify-center mb-8"
+        >
+          <div className="inline-flex bg-card border border-border p-1 h-auto overflow-x-auto">
+            {tabsData.map((tab) => {
+              const Icon = tab.icon;
+              const isActive = tab.id === activeTab;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-6 py-3 flex items-center gap-2 text-sm transition-all duration-300 whitespace-nowrap ${
+                    isActive
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-transparent text-muted-foreground hover:text-foreground"
+                  }`}
                 >
-                  <img
-                    src={activeData.image}
-                    alt={activeData.imageAlt}
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30" />
-                  
-                  {/* Highlight Zone Indicator */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.4, delay: 0.2 }}
-                    className="absolute left-0 right-0 pointer-events-none"
-                    style={{
-                      top: activeData.imagePosition.top,
-                      height: activeData.imagePosition.height,
-                    }}
-                  >
-                    <div className="absolute inset-0 border-2 border-primary/60 bg-primary/10" />
-                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
-                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
-                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
-                  </motion.div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Data Card */}
-            <div className="order-1 lg:order-2 relative z-10">
-              <AnimatePresence mode="wait">
-                {tabsData.map((tab) => (
-                  <TabsContent key={tab.id} value={tab.id} className="mt-0" forceMount={undefined}>
-                    <motion.div
-                      key={tab.id}
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -15 }}
-                      transition={{ duration: 0.3 }}
-                      className="relative bg-card border border-border p-8 lg:p-10"
-                    >
-                      {/* Card Header */}
-                      <div className="mb-6">
-                        <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground">
-                            <tab.icon className="w-5 h-5" />
-                          </div>
-                          <div>
-                            <h2 className="text-2xl lg:text-3xl font-light text-foreground">
-                              {tab.title[language]}
-                            </h2>
-                          </div>
-                        </div>
-                        <p className="text-lg text-primary font-light">
-                          {tab.subtitle[language]}
-                        </p>
-                      </div>
-
-                      {/* Description */}
-                      <div className="text-muted-foreground leading-relaxed mb-8 space-y-4 text-sm lg:text-base">
-                        {tab.description[language].split("\n\n").map((paragraph, i) => (
-                          <p key={i}>{paragraph}</p>
-                        ))}
-                      </div>
-
-                      {/* Stats Grid */}
-                      <div className="grid grid-cols-3 gap-4">
-                        {tab.stats.map((stat, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
-                            className="text-center p-4 bg-secondary/50 border border-border/50"
-                          >
-                            <p className="text-lg lg:text-xl font-light text-foreground leading-tight">
-                              {stat.value}
-                            </p>
-                            <p className="text-[10px] lg:text-xs text-muted-foreground mt-1 uppercase tracking-wider">
-                              {stat.label[language]}
-                            </p>
-                          </motion.div>
-                        ))}
-                      </div>
-
-                      {/* Accent Line */}
-                      <div className={`absolute top-0 ${dir === "rtl" ? "right-0" : "left-0"} w-1 h-full bg-primary`} />
-                    </motion.div>
-                  </TabsContent>
-                ))}
-              </AnimatePresence>
-            </div>
+                  <Icon className="w-4 h-4" />
+                  <span>{tab.label[language]}</span>
+                </button>
+              );
+            })}
           </div>
-        </Tabs>
+        </motion.div>
+
+        {/* Content Area */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Image */}
+          <div className="relative order-2 lg:order-1">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="relative aspect-[3/4] max-w-sm mx-auto rounded-sm overflow-hidden shadow-2xl"
+              >
+                <img
+                  src={activeData.image}
+                  alt={activeData.imageAlt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30" />
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="absolute left-0 right-0 pointer-events-none"
+                  style={{
+                    top: activeData.imagePosition.top,
+                    height: activeData.imagePosition.height,
+                  }}
+                >
+                  <div className="absolute inset-0 border-2 border-primary/60 bg-primary/10" />
+                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Data Card */}
+          <div className="order-1 lg:order-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.3 }}
+                className="relative bg-card border border-border p-8 lg:p-10"
+              >
+                <div className="mb-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 flex items-center justify-center bg-primary text-primary-foreground">
+                      <ActiveIcon className="w-5 h-5" />
+                    </div>
+                    <h2 className="text-2xl lg:text-3xl font-light text-foreground">
+                      {activeData.title[language]}
+                    </h2>
+                  </div>
+                  <p className="text-lg text-primary font-light">
+                    {activeData.subtitle[language]}
+                  </p>
+                </div>
+
+                <div className="text-muted-foreground leading-relaxed mb-8 space-y-4 text-sm lg:text-base">
+                  {activeData.description[language].split("\n\n").map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-3 gap-4">
+                  {activeData.stats.map((stat, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
+                      className="text-center p-4 bg-secondary/50 border border-border/50"
+                    >
+                      <p className="text-lg lg:text-xl font-light text-foreground leading-tight">
+                        {stat.value}
+                      </p>
+                      <p className="text-[10px] lg:text-xs text-muted-foreground mt-1 uppercase tracking-wider">
+                        {stat.label[language]}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                <div className={`absolute top-0 ${dir === "rtl" ? "right-0" : "left-0"} w-1 h-full bg-primary`} />
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   );
