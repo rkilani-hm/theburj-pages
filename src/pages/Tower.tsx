@@ -1,7 +1,6 @@
 import Header from "@/components/alhamra/Header";
 import TowerTabbedDashboard from "@/components/alhamra/TowerTabbedDashboard";
 import CollapsibleSystemPulse from "@/components/alhamra/CollapsibleSystemPulse";
-import ServiceHubDrawers from "@/components/alhamra/ServiceHubDrawers";
 import TrustBadgesFooter from "@/components/alhamra/TrustBadgesFooter";
 import AwardsSection from "@/components/alhamra/AwardsSection";
 import Footer from "@/components/alhamra/Footer";
@@ -17,9 +16,6 @@ const Tower = () => {
       <main className="pt-24 pb-24">
         {/* Tabbed Dashboard Hero */}
         <TowerTabbedDashboard />
-        
-        {/* Interactive Service Hub Drawers */}
-        <ServiceHubDrawers />
         
         {/* Awards & Recognition */}
         <AwardsSection />
