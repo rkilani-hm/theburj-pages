@@ -44,8 +44,8 @@ const tabsData: TabData[] = [
     title: { en: "The Core", ar: "القلب" },
     subtitle: { en: "Largest office floor area in Kuwait City", ar: "أكبر مساحة طابق مكتبي في مدينة الكويت" },
     description: {
-      en: "Efficient floor plates allow flexible configurations suitable for single-tenant headquarters or multi-tenant layouts. Each floor offers unobstructed panoramic views of Kuwait City and the Arabian Gulf.",
-      ar: "تسمح الطوابق الفعالة بتكوينات مرنة مناسبة لمقرات المستأجر الواحد أو التخطيطات متعددة المستأجرين. يوفر كل طابق إطلالات بانورامية غير محجوبة على مدينة الكويت والخليج العربي."
+      en: "Al Hamra Business Tower is anchored by structural intelligence and engineering precision, a system conceived not only for height, but for endurance.\n\nAt its center, a reinforced concrete shear wall core serves as the primary lateral force-resisting system. This is complemented by a perimeter moment-resisting frame engineered to withstand both wind and gravity loads.\n\nThe flared structural walls contribute to torsional resistance and vertical load transfer, while the 24-meter-high lamella lobby structure braces the primary columns and creates one of the region's most dramatic entrance volumes.\n\nCast-in-place slabs act integrally as diaphragms within the gravity system, ensuring structural continuity across all floors.\n\nOperationally, the tower is equipped with advanced smart-building systems, including uninterrupted power infrastructure, high-capacity data networks, and integrated people and vehicle movement management.",
+      ar: "يرتكز برج الحمراء للأعمال على ذكاء هيكلي ودقة هندسية، نظام صُمم ليس فقط من أجل الارتفاع، بل من أجل الصمود.\n\nفي مركزه، يعمل جدار القص الخرساني المسلح كنظام رئيسي لمقاومة القوى الجانبية، مدعوماً بإطار محيطي مقاوم للعزوم مصمم لتحمل أحمال الرياح والجاذبية.\n\nتساهم الجدران الهيكلية المتوهجة في مقاومة الالتواء ونقل الأحمال الرأسية، بينما يدعم هيكل الردهة اللاميلي بارتفاع ٢٤ متراً الأعمدة الرئيسية ويخلق أحد أكثر أحجام المداخل إثارة في المنطقة."
     },
     stats: [
       { value: "~2,300", label: { en: "sqm Build-Up", ar: "م² مساحة بناء" } },
