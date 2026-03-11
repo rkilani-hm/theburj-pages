@@ -397,21 +397,6 @@ const LegacySection = () => {
       {/* Timeline Section */}
       <div className="py-16 bg-muted/30">
         <div className="container mx-auto px-6 lg:px-12">
-          <motion.div 
-            ref={evolutionRef}
-            initial="hidden"
-            animate={evolutionInView ? "visible" : "hidden"}
-            variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-title font-light text-foreground mb-4">
-              {t("legacy.evolution.heading")}
-            </h2>
-            <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-              {t("legacy.evolution.desc")}
-            </p>
-          </motion.div>
 
           {/* Horizontal Timeline */}
           <div className="relative">
