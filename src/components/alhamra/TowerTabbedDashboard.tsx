@@ -61,8 +61,8 @@ const tabsData: TabData[] = [
     title: { en: "The Foundation", ar: "الأساس" },
     subtitle: { en: "Integrated Retail & Lifestyle", ar: "تجزئة ونمط حياة متكامل" },
     description: {
-      en: "Integrated with Al Hamra retail and lifestyle destination. Retail, dining, and service amenities within the complex reinforce the tower as a complete professional environment.",
-      ar: "متكامل مع وجهة الحمراء للتجزئة ونمط الحياة. تعزز مرافق التجزئة والمطاعم والخدمات ضمن المجمع البرج كبيئة مهنية متكاملة."
+      en: "Beneath its sculpted form lies a foundation system engineered for long-term resilience and performance.\n\nA 4.2-meter-deep raft foundation, supported by 289 bored piles, anchors the structure securely. Pile depths range between 22 and 27 meters, calibrated to site-specific geotechnical conditions.\n\nAn active cathodic protection system safeguards against corrosion, ensuring durability over decades of operation.\n\nThe phased construction of the piling system was strategically sequenced to respond to the tower's spiraling gravity load concentration, while structural performance was validated through comprehensive wind tunnel testing based on a 50-year return period wind event.",
+      ar: "تحت شكله المنحوت يكمن نظام أساسات مصمم للمرونة والأداء طويل الأمد.\n\nقاعدة حصيرية بعمق ٤.٢ متر، مدعومة بـ ٢٨٩ خازوقاً محفوراً، ترسي الهيكل بأمان. تتراوح أعماق الخوازيق بين ٢٢ و٢٧ متراً.\n\nيحمي نظام الحماية الكاثودية النشط من التآكل، مما يضمن المتانة على مدى عقود من التشغيل."
     },
     stats: [
       { value: "5", label: { en: "Retail Levels", ar: "طوابق تجزئة" } },
