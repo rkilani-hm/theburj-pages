@@ -44,8 +44,8 @@ const tabsData: TabData[] = [
     title: { en: "The Core", ar: "القلب" },
     subtitle: { en: "Largest office floor area in Kuwait City", ar: "أكبر مساحة طابق مكتبي في مدينة الكويت" },
     description: {
-      en: "Efficient floor plates allow flexible configurations suitable for single-tenant headquarters or multi-tenant layouts. Each floor offers unobstructed panoramic views of Kuwait City and the Arabian Gulf.",
-      ar: "تسمح الطوابق الفعالة بتكوينات مرنة مناسبة لمقرات المستأجر الواحد أو التخطيطات متعددة المستأجرين. يوفر كل طابق إطلالات بانورامية غير محجوبة على مدينة الكويت والخليج العربي."
+      en: "Al Hamra Business Tower is anchored by structural intelligence and engineering precision, a system conceived not only for height, but for endurance.\n\nAt its center, a reinforced concrete shear wall core serves as the primary lateral force-resisting system. This is complemented by a perimeter moment-resisting frame engineered to withstand both wind and gravity loads.\n\nThe flared structural walls contribute to torsional resistance and vertical load transfer, while the 24-meter-high lamella lobby structure braces the primary columns and creates one of the region's most dramatic entrance volumes.\n\nCast-in-place slabs act integrally as diaphragms within the gravity system, ensuring structural continuity across all floors.\n\nOperationally, the tower is equipped with advanced smart-building systems, including uninterrupted power infrastructure, high-capacity data networks, and integrated people and vehicle movement management.",
+      ar: "يرتكز برج الحمراء للأعمال على ذكاء هيكلي ودقة هندسية، نظام صُمم ليس فقط من أجل الارتفاع، بل من أجل الصمود.\n\nفي مركزه، يعمل جدار القص الخرساني المسلح كنظام رئيسي لمقاومة القوى الجانبية، مدعوماً بإطار محيطي مقاوم للعزوم مصمم لتحمل أحمال الرياح والجاذبية.\n\nتساهم الجدران الهيكلية المتوهجة في مقاومة الالتواء ونقل الأحمال الرأسية، بينما يدعم هيكل الردهة اللاميلي بارتفاع ٢٤ متراً الأعمدة الرئيسية ويخلق أحد أكثر أحجام المداخل إثارة في المنطقة."
     },
     stats: [
       { value: "~2,300", label: { en: "sqm Build-Up", ar: "م² مساحة بناء" } },
@@ -61,8 +61,8 @@ const tabsData: TabData[] = [
     title: { en: "The Foundation", ar: "الأساس" },
     subtitle: { en: "Integrated Retail & Lifestyle", ar: "تجزئة ونمط حياة متكامل" },
     description: {
-      en: "Integrated with Al Hamra retail and lifestyle destination. Retail, dining, and service amenities within the complex reinforce the tower as a complete professional environment.",
-      ar: "متكامل مع وجهة الحمراء للتجزئة ونمط الحياة. تعزز مرافق التجزئة والمطاعم والخدمات ضمن المجمع البرج كبيئة مهنية متكاملة."
+      en: "Beneath its sculpted form lies a foundation system engineered for long-term resilience and performance.\n\nA 4.2-meter-deep raft foundation, supported by 289 bored piles, anchors the structure securely. Pile depths range between 22 and 27 meters, calibrated to site-specific geotechnical conditions.\n\nAn active cathodic protection system safeguards against corrosion, ensuring durability over decades of operation.\n\nThe phased construction of the piling system was strategically sequenced to respond to the tower's spiraling gravity load concentration, while structural performance was validated through comprehensive wind tunnel testing based on a 50-year return period wind event.",
+      ar: "تحت شكله المنحوت يكمن نظام أساسات مصمم للمرونة والأداء طويل الأمد.\n\nقاعدة حصيرية بعمق ٤.٢ متر، مدعومة بـ ٢٨٩ خازوقاً محفوراً، ترسي الهيكل بأمان. تتراوح أعماق الخوازيق بين ٢٢ و٢٧ متراً.\n\nيحمي نظام الحماية الكاثودية النشط من التآكل، مما يضمن المتانة على مدى عقود من التشغيل."
     },
     stats: [
       { value: "5", label: { en: "Retail Levels", ar: "طوابق تجزئة" } },
