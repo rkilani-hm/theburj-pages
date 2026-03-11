@@ -210,7 +210,7 @@ const Home = () => {
                   {t("home.manifesto.p2")}
                 </p>
                 <Link 
-                  to="/tower/design-engineering" 
+                  to="/tower/design" 
                   className="inline-flex items-center gap-3 text-foreground hover:text-muted-foreground transition-colors group"
                 >
                   <span className="text-sm uppercase tracking-wider">{t("home.manifesto.label")}</span>
