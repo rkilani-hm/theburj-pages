@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import towerVertical from "@/assets/som-tower-vertical.jpg";
+import lobbyArches from "@/assets/lobby-arches.jpg";
+import constructionFoundation from "@/assets/construction-foundation.jpg";
 import { Mountain, Layers, Building2 } from "lucide-react";
 
 interface TabData {
@@ -16,6 +18,8 @@ interface TabData {
     value: string;
     label: { en: string; ar: string };
   }[];
+  image: string;
+  imageAlt: string;
   imagePosition: { top: string; height: string };
 }
 
@@ -35,6 +39,8 @@ const tabsData: TabData[] = [
       { value: "#1", label: { en: "Tallest in Kuwait", ar: "الأطول في الكويت" } },
       { value: "24m", label: { en: "Lobby Height", ar: "ارتفاع الردهة" } },
     ],
+    image: towerVertical,
+    imageAlt: "Al Hamra Tower vertical view",
     imagePosition: { top: "0%", height: "35%" },
   },
   {
@@ -42,16 +48,18 @@ const tabsData: TabData[] = [
     icon: Layers,
     label: { en: "The Core", ar: "القلب" },
     title: { en: "The Core", ar: "القلب" },
-    subtitle: { en: "Largest office floor area in Kuwait City", ar: "أكبر مساحة طابق مكتبي في مدينة الكويت" },
+    subtitle: { en: "Structural Intelligence & Engineering Precision", ar: "ذكاء هيكلي ودقة هندسية" },
     description: {
-      en: "Al Hamra Business Tower is anchored by structural intelligence and engineering precision, a system conceived not only for height, but for endurance.\n\nAt its center, a reinforced concrete shear wall core serves as the primary lateral force-resisting system. This is complemented by a perimeter moment-resisting frame engineered to withstand both wind and gravity loads.\n\nThe flared structural walls contribute to torsional resistance and vertical load transfer, while the 24-meter-high lamella lobby structure braces the primary columns and creates one of the region's most dramatic entrance volumes.\n\nCast-in-place slabs act integrally as diaphragms within the gravity system, ensuring structural continuity across all floors.\n\nOperationally, the tower is equipped with advanced smart-building systems, including uninterrupted power infrastructure, high-capacity data networks, and integrated people and vehicle movement management.",
-      ar: "يرتكز برج الحمراء للأعمال على ذكاء هيكلي ودقة هندسية، نظام صُمم ليس فقط من أجل الارتفاع، بل من أجل الصمود.\n\nفي مركزه، يعمل جدار القص الخرساني المسلح كنظام رئيسي لمقاومة القوى الجانبية، مدعوماً بإطار محيطي مقاوم للعزوم مصمم لتحمل أحمال الرياح والجاذبية.\n\nتساهم الجدران الهيكلية المتوهجة في مقاومة الالتواء ونقل الأحمال الرأسية، بينما يدعم هيكل الردهة اللاميلي بارتفاع ٢٤ متراً الأعمدة الرئيسية ويخلق أحد أكثر أحجام المداخل إثارة في المنطقة."
+      en: "Al Hamra Business Tower is anchored by structural intelligence and engineering precision — a system conceived not only for height, but for endurance.\n\nAt its center, a reinforced concrete shear wall core serves as the primary lateral force-resisting system. This is complemented by a perimeter moment-resisting frame engineered to withstand both wind and gravity loads.\n\nThe flared structural walls contribute to torsional resistance and vertical load transfer, while the 24-meter-high lamella lobby structure braces the primary columns and creates one of the region's most dramatic entrance volumes.\n\nCast-in-place slabs act integrally as diaphragms within the gravity system, ensuring structural continuity across all floors. Operationally, the tower is equipped with advanced smart-building systems — including uninterrupted power infrastructure, high-capacity data networks, and integrated people and vehicle movement management.",
+      ar: "يرتكز برج الحمراء للأعمال على ذكاء هيكلي ودقة هندسية — نظام صُمم ليس فقط من أجل الارتفاع، بل من أجل الصمود.\n\nفي مركزه، يعمل جدار القص الخرساني المسلح كنظام رئيسي لمقاومة القوى الجانبية. يُكمَّل هذا بإطار محيطي مقاوم للعزوم مصمم لتحمل أحمال الرياح والجاذبية.\n\nتساهم الجدران الهيكلية المتوهجة في مقاومة الالتواء ونقل الأحمال الرأسية، بينما يدعم هيكل الردهة اللاميلي بارتفاع ٢٤ متراً الأعمدة الرئيسية ويخلق أحد أكثر أحجام المداخل إثارة في المنطقة.\n\nتعمل البلاطات المصبوبة في الموقع بشكل متكامل كحجاب حاجز ضمن نظام الجاذبية، مما يضمن الاستمرارية الهيكلية عبر جميع الطوابق. تشغيلياً، البرج مجهز بأنظمة بناء ذكية متقدمة — بما في ذلك بنية تحتية للطاقة غير المنقطعة وشبكات بيانات عالية السعة وإدارة متكاملة لحركة الأشخاص والمركبات."
     },
     stats: [
-      { value: "~2,300", label: { en: "sqm Build-Up", ar: "م² مساحة بناء" } },
-      { value: "~1,750", label: { en: "sqm Leasable", ar: "م² قابلة للتأجير" } },
-      { value: "3", label: { en: "Sky Lobbies", ar: "بهو سماوي" } },
+      { value: "Shear Wall Core", label: { en: "Primary Lateral System", ar: "نظام جانبي رئيسي" } },
+      { value: "Moment Frame", label: { en: "Wind + Gravity Resistance", ar: "مقاومة الرياح والجاذبية" } },
+      { value: "24m Lobby", label: { en: "Lamella Structure Height", ar: "ارتفاع هيكل اللاميلا" } },
     ],
+    image: lobbyArches,
+    imageAlt: "Al Hamra Tower lamella lobby interior",
     imagePosition: { top: "25%", height: "45%" },
   },
   {
@@ -59,16 +67,18 @@ const tabsData: TabData[] = [
     icon: Building2,
     label: { en: "The Foundation", ar: "الأساس" },
     title: { en: "The Foundation", ar: "الأساس" },
-    subtitle: { en: "Integrated Retail & Lifestyle", ar: "تجزئة ونمط حياة متكامل" },
+    subtitle: { en: "Engineered for Long-Term Resilience", ar: "مصمم للمرونة طويلة الأمد" },
     description: {
       en: "Beneath its sculpted form lies a foundation system engineered for long-term resilience and performance.\n\nA 4.2-meter-deep raft foundation, supported by 289 bored piles, anchors the structure securely. Pile depths range between 22 and 27 meters, calibrated to site-specific geotechnical conditions.\n\nAn active cathodic protection system safeguards against corrosion, ensuring durability over decades of operation.\n\nThe phased construction of the piling system was strategically sequenced to respond to the tower's spiraling gravity load concentration, while structural performance was validated through comprehensive wind tunnel testing based on a 50-year return period wind event.",
-      ar: "تحت شكله المنحوت يكمن نظام أساسات مصمم للمرونة والأداء طويل الأمد.\n\nقاعدة حصيرية بعمق ٤.٢ متر، مدعومة بـ ٢٨٩ خازوقاً محفوراً، ترسي الهيكل بأمان. تتراوح أعماق الخوازيق بين ٢٢ و٢٧ متراً.\n\nيحمي نظام الحماية الكاثودية النشط من التآكل، مما يضمن المتانة على مدى عقود من التشغيل."
+      ar: "تحت شكله المنحوت يكمن نظام أساسات مصمم للمرونة والأداء طويل الأمد.\n\nقاعدة حصيرية بعمق ٤.٢ متر، مدعومة بـ ٢٨٩ خازوقاً محفوراً، ترسي الهيكل بأمان. تتراوح أعماق الخوازيق بين ٢٢ و٢٧ متراً، معايرة وفقاً للظروف الجيوتقنية الخاصة بالموقع.\n\nيحمي نظام الحماية الكاثودية النشط من التآكل، مما يضمن المتانة على مدى عقود من التشغيل.\n\nتم تسلسل بناء نظام الخوازيق بشكل استراتيجي للاستجابة لتركيز أحمال الجاذبية الحلزونية للبرج، بينما تم التحقق من الأداء الهيكلي من خلال اختبارات نفق الرياح الشاملة بناءً على فترة عودة رياح مدتها ٥٠ عاماً."
     },
     stats: [
-      { value: "5", label: { en: "Retail Levels", ar: "طوابق تجزئة" } },
-      { value: "11", label: { en: "Parking Floors", ar: "طوابق مواقف" } },
-      { value: "24/7", label: { en: "Access", ar: "وصول" } },
+      { value: "4.2m Deep", label: { en: "Raft Foundation", ar: "قاعدة حصيرية" } },
+      { value: "289 Piles", label: { en: "Bored Pile System", ar: "نظام خوازيق محفورة" } },
+      { value: "50-Year", label: { en: "Wind Tunnel Return Period", ar: "فترة عودة نفق الرياح" } },
     ],
+    image: constructionFoundation,
+    imageAlt: "Al Hamra Tower construction foundation",
     imagePosition: { top: "65%", height: "35%" },
   },
 ];
@@ -120,17 +130,17 @@ const TowerTabbedDashboard = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex justify-center mb-8"
           >
-            <TabsList className="bg-card border border-border p-1 h-auto flex-wrap">
+            <TabsList className="bg-card border border-border p-1 h-auto overflow-x-auto">
               {tabsData.map((tab) => {
                 const Icon = tab.icon;
                 return (
                   <TabsTrigger
                     key={tab.id}
                     value={tab.id}
-                    className="px-6 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground flex items-center gap-2 text-sm transition-all duration-300"
+                    className="px-6 py-3 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=inactive]:text-muted-foreground data-[state=inactive]:bg-transparent flex items-center gap-2 text-sm transition-all duration-300 whitespace-nowrap"
                   >
                     <Icon className="w-4 h-4" />
-                    <span className="hidden sm:inline">{tab.label[language]}</span>
+                    <span>{tab.label[language]}</span>
                   </TabsTrigger>
                 );
               })}
@@ -139,55 +149,58 @@ const TowerTabbedDashboard = () => {
 
           {/* Content Area */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Tower Visualization */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative order-2 lg:order-1"
-            >
-              <div className="relative aspect-[3/4] max-w-sm mx-auto rounded-sm overflow-hidden shadow-2xl">
-                <img
-                  src={towerVertical}
-                  alt="Al Hamra Tower"
-                  className="w-full h-full object-cover"
-                />
-                
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30" />
-                
-                {/* Highlight Zone Indicator */}
+            {/* Image - changes per tab */}
+            <div className="relative order-2 lg:order-1">
+              <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4 }}
-                  className="absolute left-0 right-0 pointer-events-none"
-                  style={{
-                    top: activeData.imagePosition.top,
-                    height: activeData.imagePosition.height,
-                  }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative aspect-[3/4] max-w-sm mx-auto rounded-sm overflow-hidden shadow-2xl"
                 >
-                  <div className="absolute inset-0 border-2 border-primary/60 bg-primary/10" />
-                  {/* Corner Accents */}
-                  <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
-                  <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
-                  <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
+                  <img
+                    src={activeData.image}
+                    alt={activeData.imageAlt}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/30" />
+                  
+                  {/* Highlight Zone Indicator */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.4, delay: 0.2 }}
+                    className="absolute left-0 right-0 pointer-events-none"
+                    style={{
+                      top: activeData.imagePosition.top,
+                      height: activeData.imagePosition.height,
+                    }}
+                  >
+                    <div className="absolute inset-0 border-2 border-primary/60 bg-primary/10" />
+                    <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
+                    <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
+                  </motion.div>
                 </motion.div>
-              </div>
-            </motion.div>
+              </AnimatePresence>
+            </div>
 
             {/* Data Card */}
-            <div className="order-1 lg:order-2">
+            <div className="order-1 lg:order-2 relative z-10">
               <AnimatePresence mode="wait">
                 {tabsData.map((tab) => (
-                  <TabsContent key={tab.id} value={tab.id} className="mt-0">
+                  <TabsContent key={tab.id} value={tab.id} className="mt-0" forceMount={undefined}>
                     <motion.div
-                      initial={{ opacity: 0, x: dir === "rtl" ? -30 : 30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: dir === "rtl" ? 30 : -30 }}
-                      transition={{ duration: 0.4 }}
+                      key={tab.id}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -15 }}
+                      transition={{ duration: 0.3 }}
                       className="relative bg-card border border-border p-8 lg:p-10"
                     >
                       {/* Card Header */}
@@ -208,9 +221,11 @@ const TowerTabbedDashboard = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-muted-foreground leading-relaxed mb-8">
-                        {tab.description[language]}
-                      </p>
+                      <div className="text-muted-foreground leading-relaxed mb-8 space-y-4 text-sm lg:text-base">
+                        {tab.description[language].split("\n\n").map((paragraph, i) => (
+                          <p key={i}>{paragraph}</p>
+                        ))}
+                      </div>
 
                       {/* Stats Grid */}
                       <div className="grid grid-cols-3 gap-4">
@@ -222,10 +237,10 @@ const TowerTabbedDashboard = () => {
                             transition={{ duration: 0.3, delay: 0.2 + idx * 0.1 }}
                             className="text-center p-4 bg-secondary/50 border border-border/50"
                           >
-                            <p className="text-2xl lg:text-3xl font-light text-foreground tabular-nums">
+                            <p className="text-lg lg:text-xl font-light text-foreground leading-tight">
                               {stat.value}
                             </p>
-                            <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wider">
+                            <p className="text-[10px] lg:text-xs text-muted-foreground mt-1 uppercase tracking-wider">
                               {stat.label[language]}
                             </p>
                           </motion.div>
