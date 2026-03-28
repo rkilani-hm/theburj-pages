@@ -83,21 +83,30 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/40 mb-6">
               {t("footer.navigation") || "Navigation"}
             </h3>
-            <nav className="grid grid-cols-2 gap-x-6 gap-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300"
-                >
-                  {link.label[language]}
-                </a>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {navSections.map((section) => (
+                <div key={section.heading.en}>
+                  <p className="text-sm font-medium text-primary-foreground/80 mb-3">
+                    {section.heading[language]}
+                  </p>
+                  <nav className="space-y-2">
+                    {section.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="block text-xs text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300"
+                      >
+                        {link.label[language]}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
               ))}
-            </nav>
+            </div>
           </div>
 
           {/* Legal & Social */}
