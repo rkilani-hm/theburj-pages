@@ -4,13 +4,42 @@ import { ArrowUp } from "lucide-react";
 const Footer = () => {
   const { language, t } = useLanguage();
 
-  const navLinks = [
-    { label: { en: "The Tower", ar: "البرج" }, href: "/tower" },
-    { label: { en: "Business", ar: "الأعمال" }, href: "/business/workplace-experience" },
-    { label: { en: "Services & Facilities", ar: "الخدمات والمرافق" }, href: "/services" },
-    { label: { en: "Sustainability", ar: "الاستدامة" }, href: "/tower/sustainability" },
-    { label: { en: "Location & Access", ar: "الموقع والوصول" }, href: "/location" },
-    { label: { en: "Leasing", ar: "التأجير" }, href: "/leasing/opportunities" },
+  const navSections = [
+    {
+      heading: { en: "The Tower", ar: "البرج" },
+      links: [
+        { label: { en: "Overview", ar: "نظرة عامة" }, href: "/tower" },
+        { label: { en: "Rising", ar: "النهوض" }, href: "/tower/rising" },
+        { label: { en: "Design & Engineering", ar: "التصميم والهندسة" }, href: "/tower/design" },
+        { label: { en: "Awards & Recognition", ar: "الجوائز والتقدير" }, href: "/tower/recognition" },
+      ],
+    },
+    {
+      heading: { en: "Business", ar: "الأعمال" },
+      links: [
+        { label: { en: "Workplace Experience", ar: "تجربة مكان العمل" }, href: "/business/workplace-experience" },
+        { label: { en: "Office Spaces & Floor Plans", ar: "المساحات المكتبية" }, href: "/business/office-spaces" },
+        { label: { en: "Vertical Transportation", ar: "النقل العمودي" }, href: "/business/vertical-transportation" },
+        { label: { en: "Connectivity & Integration", ar: "الاتصال والتكامل" }, href: "/business/connectivity" },
+      ],
+    },
+    {
+      heading: { en: "Experience", ar: "التجربة" },
+      links: [
+        { label: { en: "Services & Facilities", ar: "الخدمات والمرافق" }, href: "/services" },
+        { label: { en: "Sustainability & Innovation", ar: "الاستدامة والابتكار" }, href: "/tower/sustainability" },
+        { label: { en: "Location & Access", ar: "الموقع والوصول" }, href: "/location" },
+      ],
+    },
+    {
+      heading: { en: "Leasing", ar: "التأجير" },
+      links: [
+        { label: { en: "Leasing Opportunities", ar: "فرص التأجير" }, href: "/leasing/opportunities" },
+        { label: { en: "Inquiry", ar: "استفسار" }, href: "/leasing/inquiry" },
+        { label: { en: "Downloads", ar: "التحميلات" }, href: "/leasing/downloads" },
+        { label: { en: "Contact", ar: "اتصل بنا" }, href: "/leasing/contact" },
+      ],
+    },
   ];
 
   const socialLinks = [
@@ -39,7 +68,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-8">
           {/* Logo & Brand */}
-          <div className="md:col-span-4 space-y-6">
+          <div className="md:col-span-3 space-y-6">
             <div>
               <span className="text-xl font-light tracking-[0.2em] uppercase">
                 Al Hamra
@@ -54,25 +83,34 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-5">
             <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/40 mb-6">
               {t("footer.navigation") || "Navigation"}
             </h3>
-            <nav className="grid grid-cols-2 gap-x-6 gap-y-3">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-primary-foreground/60 hover:text-primary-foreground transition-colors duration-300"
-                >
-                  {link.label[language]}
-                </a>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              {navSections.map((section) => (
+                <div key={section.heading.en}>
+                  <p className="text-sm font-medium text-primary-foreground/80 mb-3">
+                    {section.heading[language]}
+                  </p>
+                  <nav className="space-y-2">
+                    {section.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        className="block text-xs text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300"
+                      >
+                        {link.label[language]}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
               ))}
-            </nav>
+            </div>
           </div>
 
           {/* Legal & Social */}
-          <div className="md:col-span-4 space-y-8">
+          <div className="md:col-span-4 lg:col-span-4 space-y-8">
             <div>
               <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/40 mb-6">
                 {t("footer.legal") || "Legal"}
