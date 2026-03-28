@@ -145,13 +145,13 @@ const ParallaxHistoryTimeline = () => {
           className="text-center mb-20"
         >
           <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
-            {t("history.timeline.label")}
+            {t("legacy.archival.label") || "Chronicles of the Past"}
           </span>
           <h2 className="text-title font-light text-foreground mb-4">
-            {t("history.timeline.heading")}
+            {t("legacy.archival.heading") || "Echoing Kuwait's Heritage"}
           </h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            {t("history.timeline.desc")}
+            {t("legacy.archival.desc") || "Tracing the site's journey from traditional souq to global landmark"}
           </p>
         </motion.div>
 
