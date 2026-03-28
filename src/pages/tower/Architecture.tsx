@@ -380,7 +380,7 @@ const Architecture = () => {
                 { name: "SOM", role: "Lead Architect & Engineer" },
                 { name: "VDA", role: "Associate Architect" },
                 { name: "Gehry Technologies", role: "Digital Project Software" },
-                { name: "Ahmadiah Contracting", role: "General Contractor" },
+                { name: "Ahmadiah Contracting & Trading Co. KCSC", role: "General Contractor" },
               ].map((collaborator) => (
                 <div key={collaborator.name} className="text-center">
                   <p className="font-light">{collaborator.name}</p>
