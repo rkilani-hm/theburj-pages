@@ -29,7 +29,7 @@ const LocationSection = () => {
 
   const transportOptions = [
     { icon: Car, label: t("location.transport.car") || "Private Vehicle", desc: t("location.transport.car.desc") || "Multi-level parking with 1,400+ spaces" },
-    { icon: Train, label: t("location.transport.metro") || "Future Metro", desc: t("location.transport.metro.desc") || "Adjacent to planned metro station" },
+    { icon: Train, label: t("location.transport.metro") || "City Bus Network", desc: t("location.transport.metro.desc") || "Connected to Kuwait's major bus corridors" },
     { icon: Navigation, label: t("location.transport.taxi") || "Taxi & Rideshare", desc: t("location.transport.taxi.desc") || "Dedicated drop-off zone at main entrance" },
   ];
 
