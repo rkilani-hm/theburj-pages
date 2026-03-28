@@ -383,7 +383,7 @@ const DesignEngineering = () => {
           <div className="container mx-auto max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className="space-y-8">
-                <h2 className="text-3xl lg:text-4xl font-light tracking-wide text-white">
+                <h2 className="text-3xl lg:text-4xl font-light tracking-wide text-primary">
                   Sky Deck & Restaurant
                 </h2>
                 <p className="text-grey-400 leading-relaxed">
