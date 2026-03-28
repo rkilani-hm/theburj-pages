@@ -34,8 +34,8 @@ const Connectivity = () => {
       icon: Train,
       title: language === "en" ? "Transport Links" : "روابط النقل",
       desc: language === "en"
-        ? "Proximity to major arterial roads and Kuwait's developing public transit infrastructure. 11-level car park with 1,100+ spaces and dedicated VIP access."
-        : "قرب من الطرق الشريانية الرئيسية والبنية التحتية للنقل العام. موقف سيارات من 11 طابقاً بأكثر من 1,100 مكان.",
+        ? "Proximity to major arterial roads and Kuwait's developing public transit infrastructure. 11-level car park with 2,000+ spaces and dedicated VIP access."
+        : "قرب من الطرق الشريانية الرئيسية والبنية التحتية للنقل العام. موقف سيارات من 11 طابقاً بأكثر من 2,000 مكان.",
     },
     {
       icon: MapPin,
@@ -89,8 +89,8 @@ const Connectivity = () => {
                   </p>
                   <p className="text-body text-muted-foreground leading-relaxed">
                     {language === "en"
-                      ? "With 1,100+ parking spaces across 11 levels, VIP drop-off zones, and proximity to Kuwait's key government institutions, the tower ensures frictionless daily operations for tenants and visitors alike."
-                      : "مع أكثر من 1,100 موقف سيارات عبر 11 طابقاً ومناطق إنزال كبار الشخصيات والقرب من المؤسسات الحكومية الرئيسية."}
+                      ? "With 2,000+ parking spaces across 11 levels, VIP drop-off zones, and proximity to Kuwait's key government institutions, the tower ensures frictionless daily operations for tenants and visitors alike."
+                      : "مع أكثر من 2,000 موقف سيارات عبر 11 طابقاً ومناطق إنزال كبار الشخصيات والقرب من المؤسسات الحكومية الرئيسية."}
                   </p>
                 </motion.div>
 
@@ -196,9 +196,9 @@ const Connectivity = () => {
             {/* District Stats */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
               {[
-                { value: "1,100+", label: language === "en" ? "Parking Spaces" : "مواقف سيارات" },
+                { value: "2,000+", label: language === "en" ? "Parking Spaces" : "مواقف سيارات" },
                 { value: "11", label: language === "en" ? "Parking Levels" : "طوابق مواقف" },
-                { value: "200+", label: language === "en" ? "Retail Outlets" : "محل تجاري" },
+                { value: "90+", label: language === "en" ? "Retail Outlets" : "محل تجاري" },
                 { value: "5 min", label: language === "en" ? "To Government District" : "إلى الحي الحكومي" },
               ].map((stat, index) => (
                 <motion.div
