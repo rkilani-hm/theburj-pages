@@ -4,13 +4,42 @@ import { ArrowUp } from "lucide-react";
 const Footer = () => {
   const { language, t } = useLanguage();
 
-  const navLinks = [
-    { label: { en: "The Tower", ar: "البرج" }, href: "/tower" },
-    { label: { en: "Business", ar: "الأعمال" }, href: "/business/workplace-experience" },
-    { label: { en: "Services & Facilities", ar: "الخدمات والمرافق" }, href: "/services" },
-    { label: { en: "Sustainability", ar: "الاستدامة" }, href: "/tower/sustainability" },
-    { label: { en: "Location & Access", ar: "الموقع والوصول" }, href: "/location" },
-    { label: { en: "Leasing", ar: "التأجير" }, href: "/leasing/opportunities" },
+  const navSections = [
+    {
+      heading: { en: "The Tower", ar: "البرج" },
+      links: [
+        { label: { en: "Overview", ar: "نظرة عامة" }, href: "/tower" },
+        { label: { en: "Rising", ar: "النهوض" }, href: "/tower/rising" },
+        { label: { en: "Design & Engineering", ar: "التصميم والهندسة" }, href: "/tower/design" },
+        { label: { en: "Awards & Recognition", ar: "الجوائز والتقدير" }, href: "/tower/recognition" },
+      ],
+    },
+    {
+      heading: { en: "Business", ar: "الأعمال" },
+      links: [
+        { label: { en: "Workplace Experience", ar: "تجربة مكان العمل" }, href: "/business/workplace-experience" },
+        { label: { en: "Office Spaces & Floor Plans", ar: "المساحات المكتبية" }, href: "/business/office-spaces" },
+        { label: { en: "Vertical Transportation", ar: "النقل العمودي" }, href: "/business/vertical-transportation" },
+        { label: { en: "Connectivity & Integration", ar: "الاتصال والتكامل" }, href: "/business/connectivity" },
+      ],
+    },
+    {
+      heading: { en: "Experience", ar: "التجربة" },
+      links: [
+        { label: { en: "Services & Facilities", ar: "الخدمات والمرافق" }, href: "/services" },
+        { label: { en: "Sustainability & Innovation", ar: "الاستدامة والابتكار" }, href: "/tower/sustainability" },
+        { label: { en: "Location & Access", ar: "الموقع والوصول" }, href: "/location" },
+      ],
+    },
+    {
+      heading: { en: "Leasing", ar: "التأجير" },
+      links: [
+        { label: { en: "Leasing Opportunities", ar: "فرص التأجير" }, href: "/leasing/opportunities" },
+        { label: { en: "Inquiry", ar: "استفسار" }, href: "/leasing/inquiry" },
+        { label: { en: "Downloads", ar: "التحميلات" }, href: "/leasing/downloads" },
+        { label: { en: "Contact", ar: "اتصل بنا" }, href: "/leasing/contact" },
+      ],
+    },
   ];
 
   const socialLinks = [
