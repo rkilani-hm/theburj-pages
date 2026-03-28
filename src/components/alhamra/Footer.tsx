@@ -110,7 +110,7 @@ const Footer = () => {
           </div>
 
           {/* Legal & Social */}
-          <div className="md:col-span-4 space-y-8">
+          <div className="md:col-span-4 lg:col-span-4 space-y-8">
             <div>
               <h3 className="text-xs uppercase tracking-[0.2em] text-primary-foreground/40 mb-6">
                 {t("footer.legal") || "Legal"}
