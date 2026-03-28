@@ -68,7 +68,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-12 gap-12 lg:gap-8">
           {/* Logo & Brand */}
-          <div className="md:col-span-4 space-y-6">
+          <div className="md:col-span-3 space-y-6">
             <div>
               <span className="text-xl font-light tracking-[0.2em] uppercase">
                 Al Hamra
