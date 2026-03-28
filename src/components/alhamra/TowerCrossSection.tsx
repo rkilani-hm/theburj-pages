@@ -105,14 +105,16 @@ const floorMarkers: FloorMarker[] = [
   },
 ];
 
+// Reversed order for legend display (#21)
+const legendMarkers = [...floorMarkers].reverse();
+
 const TowerCrossSection = () => {
   const [activeMarker, setActiveMarker] = useState<FloorMarker | null>(null);
   const [hoveredMarker, setHoveredMarker] = useState<string | null>(null);
 
-  // Tower dimensions for positioning (0 = ground, 76 = top)
-  const totalFloors = 78; // Including basement levels
-  const towerHeight = 500; // px
-  const baseOffset = 2; // For basement levels
+  const totalFloors = 78;
+  const towerHeight = 500;
+  const baseOffset = 2;
 
   const getYPosition = (levelNumber: number) => {
     const normalizedLevel = levelNumber + baseOffset;
@@ -125,13 +127,11 @@ const TowerCrossSection = () => {
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start justify-center">
         {/* Tower Visualization */}
         <div className="relative flex-shrink-0">
-          {/* Tower SVG */}
           <svg
             viewBox="0 0 200 600"
             className="w-48 md:w-64 h-auto"
             style={{ filter: "drop-shadow(0 4px 20px rgba(0,0,0,0.3))" }}
           >
-            {/* Tower body - twisted shape approximation */}
             <defs>
               <linearGradient id="towerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="hsl(var(--charcoal-600))" />
@@ -144,15 +144,12 @@ const TowerCrossSection = () => {
               </linearGradient>
             </defs>
 
-            {/* Main tower body */}
             <path
               d="M60 580 L50 560 Q30 400 40 200 Q50 80 90 20 L100 10 L110 20 Q150 80 160 200 Q170 400 150 560 L140 580 Z"
               fill="url(#towerGradient)"
               stroke="hsl(var(--charcoal-500))"
               strokeWidth="1"
             />
-
-            {/* Glass facade highlights */}
             <path
               d="M65 560 Q45 400 55 200 Q65 100 95 30"
               fill="none"
@@ -160,15 +157,12 @@ const TowerCrossSection = () => {
               strokeWidth="20"
               opacity="0.5"
             />
-
-            {/* Carved section (south side) */}
             <path
               d="M100 580 Q120 400 115 200 Q110 100 100 30"
               fill="hsl(var(--charcoal-900))"
               opacity="0.4"
             />
 
-            {/* Floor markers */}
             {floorMarkers.map((marker) => {
               const yPos = 580 - (marker.levelNumber + 2) * 7;
               const isActive = activeMarker?.level === marker.level;
@@ -176,7 +170,6 @@ const TowerCrossSection = () => {
 
               return (
                 <g key={marker.level}>
-                  {/* Floor line */}
                   <motion.line
                     x1="35"
                     y1={yPos}
@@ -196,8 +189,6 @@ const TowerCrossSection = () => {
                     }}
                     transition={{ duration: 0.2 }}
                   />
-
-                  {/* Interactive marker */}
                   <motion.circle
                     cx="175"
                     cy={yPos}
@@ -213,9 +204,6 @@ const TowerCrossSection = () => {
                     whileHover={{ scale: 1.2 }}
                     animate={{
                       scale: isActive ? 1.3 : 1,
-                      boxShadow: isActive
-                        ? "0 0 20px rgba(255,255,255,0.5)"
-                        : "none",
                     }}
                     onMouseEnter={() => setHoveredMarker(marker.level)}
                     onMouseLeave={() => setHoveredMarker(null)}
@@ -225,8 +213,6 @@ const TowerCrossSection = () => {
                       )
                     }
                   />
-
-                  {/* Level label */}
                   <text
                     x="190"
                     y={yPos + 4}
@@ -241,14 +227,12 @@ const TowerCrossSection = () => {
               );
             })}
 
-            {/* Spire */}
             <path
               d="M100 10 L95 5 L100 -10 L105 5 Z"
               fill="hsl(var(--charcoal-500))"
             />
           </svg>
 
-          {/* Ground level indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
           <p className="text-center text-xs text-grey-400 mt-2">Ground Level</p>
         </div>
@@ -272,9 +256,9 @@ const TowerCrossSection = () => {
             </div>
           </div>
 
-          {/* Floor list */}
+          {/* Floor list — reversed order (#21) */}
           <div className="space-y-3">
-            {floorMarkers.map((marker, index) => {
+            {legendMarkers.map((marker, index) => {
               const isActive = activeMarker?.level === marker.level;
               const Icon = marker.type === "substation" ? Zap : Shield;
 
@@ -400,7 +384,6 @@ const TowerCrossSection = () => {
         </div>
       </div>
 
-      {/* Instruction hint */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
