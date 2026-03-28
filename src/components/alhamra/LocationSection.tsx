@@ -156,7 +156,7 @@ const LocationSection = () => {
               </span>
             </div>
             <h3 className="text-subheadline font-light text-foreground mb-4">
-              {t("location.map.title") || "Find Us"}
+              {t("location.map.title") || "Where Ambition Meets Address"}
             </h3>
           </motion.div>
 
