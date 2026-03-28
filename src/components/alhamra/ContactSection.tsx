@@ -52,7 +52,6 @@ const ContactSection = () => {
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-px bg-white/50" />
-                <span className="text-xs uppercase tracking-[0.3em] text-white/70">07</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-white">
                 {t("contact.title")}

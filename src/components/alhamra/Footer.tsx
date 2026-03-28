@@ -13,6 +13,14 @@ const Footer = () => {
     { label: { en: "Leasing", ar: "التأجير" }, href: "/leasing/opportunities" },
   ];
 
+  const socialLinks = [
+    { label: "Instagram", abbr: "Ig", url: "https://www.instagram.com/alhamratower" },
+    { label: "Facebook", abbr: "Fb", url: "https://www.facebook.com/AlHamraTowerofficial" },
+    { label: "X", abbr: "X", url: "https://x.com/AlHamraTower" },
+    { label: "LinkedIn", abbr: "Li", url: "https://www.linkedin.com/company/al-hamra-real-estate-company" },
+    { label: "YouTube", abbr: "Yt", url: "https://www.youtube.com/@alhamratower" },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -85,14 +93,12 @@ const Footer = () => {
                 {t("footer.connect") || "Connect"}
               </h3>
               <div className="flex gap-4">
-                {[
-                  { label: "LinkedIn", abbr: "Li" },
-                  { label: "Twitter", abbr: "X" },
-                  { label: "Instagram", abbr: "Ig" },
-                ].map((social) => (
+                {socialLinks.map((social) => (
                   <a
                     key={social.label}
-                    href="#"
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 border border-primary-foreground/20 flex items-center justify-center text-xs text-primary-foreground/60 hover:bg-primary-foreground/10 hover:text-primary-foreground transition-all duration-300"
                     aria-label={social.label}
                   >

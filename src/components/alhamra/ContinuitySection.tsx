@@ -35,7 +35,6 @@ const ContinuitySection = () => {
           className="flex items-center gap-4 mb-6"
         >
           <div className="w-12 h-px bg-border" />
-          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">05</span>
         </motion.div>
 
         {/* Section Title */}

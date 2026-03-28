@@ -14,6 +14,9 @@ import towerCityContext from "@/assets/tower-city-context.jpg";
 import somTowerSkyline from "@/assets/som-tower-skyline.jpg";
 import kuwaitPanoramaSunset from "@/assets/kuwait-panorama-sunset.png";
 import towerNightIlluminated from "@/assets/tower-night-illuminated.jpg";
+import towerCityscape from "@/assets/tower-cityscape.png";
+import kuwaitMarina from "@/assets/kuwait-marina-dusk.png";
+import kuwaitHorizon from "@/assets/kuwait-horizon.png";
 
 // Archival images
 import kuwaitCinemaHistoric from "@/assets/kuwait-cinema-historic.jpg";
@@ -33,6 +36,7 @@ const LegacySection = () => {
   
   const { ref: impactRef, isInView: impactInView } = useScrollReveal();
   const { ref: heartRef, isInView: heartInView } = useScrollReveal();
+  const { ref: lightRef, isInView: lightInView } = useScrollReveal();
 
   const archivalImages = [
     { 
@@ -79,29 +83,6 @@ const LegacySection = () => {
     offset: ["start end", "end start"]
   });
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-
-  const timeline = [
-    { 
-      year: "1960s", 
-      label: t("legacy.timeline.cinema"), 
-      desc: t("legacy.timeline.cinema.desc")
-    },
-    { 
-      year: "2005", 
-      label: t("legacy.timeline.groundbreaking"), 
-      desc: t("legacy.timeline.groundbreaking.desc")
-    },
-    { 
-      year: "2011", 
-      label: t("legacy.timeline.completion"), 
-      desc: t("legacy.timeline.completion.desc")
-    },
-    { 
-      year: t("legacy.timeline.today"), 
-      label: t("legacy.timeline.icon"), 
-      desc: t("legacy.timeline.icon.desc")
-    },
-  ];
 
   return (
     <section id="legacy" className="bg-background relative overflow-hidden">
@@ -229,55 +210,8 @@ const LegacySection = () => {
         </div>
       </div>
 
-      {/* Archival Gallery Section */}
-      <div className="py-16 bg-muted/30">
-        <div className="container mx-auto px-6 lg:px-12">
-          <motion.div 
-            ref={archivalRef}
-            initial="hidden"
-            animate={archivalInView ? "visible" : "hidden"}
-            variants={revealVariants.fadeUp}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-4 block">
-              {t("legacy.archival.label")}
-            </span>
-            <h2 className="text-title font-light text-foreground mb-4">
-              {t("legacy.archival.heading")}
-            </h2>
-            <p className="text-body text-muted-foreground max-w-2xl">
-              {t("legacy.archival.desc")}
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {archivalImages.map((image, index) => (
-              <motion.div
-                key={index}
-                initial="hidden"
-                animate={archivalInView ? "visible" : "hidden"}
-                variants={revealVariants.fadeUp}
-                transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-                className="group relative overflow-hidden"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover sepia-[0.4] transition-all duration-700 group-hover:sepia-0 group-hover:scale-105"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-xl font-light text-background mb-1">{image.year}</p>
-                  <p className="text-sm text-background/80">{image.caption}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Chronicles of the Past — Echoing Kuwait's Heritage (merged with Historical Journey) */}
+      <ParallaxHistoryTimeline />
 
       {/* Before/After Comparison Section */}
       <div className="py-16 bg-background">
@@ -301,9 +235,6 @@ const LegacySection = () => {
                 <p className="text-body text-muted-foreground mb-6">
                   {t("legacy.comparison.desc")}
                 </p>
-                <p className="text-sm text-muted-foreground italic">
-                  {t("legacy.comparison.instruction")}
-                </p>
               </div>
               
               <motion.div
@@ -321,16 +252,17 @@ const LegacySection = () => {
                   beforeYear="1960s"
                   afterYear="2011"
                 />
+                {/* Instruction text moved below slider (#09) */}
+                <p className="text-sm text-muted-foreground/60 italic mt-4 text-center">
+                  {t("legacy.comparison.instruction")}
+                </p>
               </motion.div>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Parallax History Timeline */}
-      <ParallaxHistoryTimeline />
-
-      {/* Founders' Vision Section */}
+      {/* Founders' Vision Section — moved after Before & Beyond (#06) */}
       <div className="py-16 bg-background">
         <div className="container mx-auto px-6 lg:px-12">
           <motion.div 
@@ -394,8 +326,6 @@ const LegacySection = () => {
         </div>
       </div>
 
-
-
       {/* Urban & Cultural Impact */}
       <div className="py-16 bg-foreground text-background">
         <div className="container mx-auto px-6 lg:px-12">
@@ -458,6 +388,96 @@ const LegacySection = () => {
               </div>
             </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/* Light Meets Horizon — merged from "Light Throughout the Day" + "Where Sky Meets Sea" (#07) */}
+      <div className="py-16 bg-secondary">
+        <div className="container mx-auto px-6 lg:px-12">
+          <motion.div 
+            ref={lightRef}
+            initial="hidden"
+            animate={lightInView ? "visible" : "hidden"}
+            variants={revealVariants.fadeUp}
+            transition={{ duration: 0.6 }}
+            className="mb-12"
+          >
+            <h3 className="text-subheadline font-light text-foreground mb-4">
+              Light Meets Horizon
+            </h3>
+            <p className="text-body text-muted-foreground max-w-3xl">
+              From its height, the tower commands both sun and sea. As dawn breaks over the Arabian Gulf and dusk descends upon the city, light traverses its sculpted form, casting measured brilliance across glass and stone. Here, land and water converge in solemn panorama — a vantage not merely of elevation, but of dominion over horizon and time.
+            </p>
+          </motion.div>
+
+          {/* Time-lapse display from "Light Throughout the Day" */}
+          <motion.div 
+            initial="hidden"
+            animate={lightInView ? "visible" : "hidden"}
+            className="grid grid-cols-3 gap-4 lg:gap-6 mb-12"
+          >
+            {[
+              { label: t("perspective.view1") || "Dawn", time: "06:00", image: kuwaitPanoramaSunset },
+              { label: t("perspective.view2") || "Noon", time: "12:00", image: towerCityscape },
+              { label: t("perspective.view3") || "Dusk", time: "18:00", image: kuwaitMarina },
+            ].map((view, i) => (
+              <motion.div 
+                key={i} 
+                variants={revealVariants.fadeUp}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative cursor-pointer"
+              >
+                <div className="aspect-[16/9] overflow-hidden bg-muted relative">
+                  <img 
+                    src={view.image}
+                    alt={view.label}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{
+                      filter: i === 0 ? "brightness(0.7) saturate(0.8)" : i === 2 ? "brightness(0.9) saturate(1.2) sepia(0.1)" : "none"
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors duration-300" />
+                </div>
+                <div className="mt-4 flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">{view.label}</span>
+                  <span className="text-xs text-muted-foreground/60 font-mono">{view.time}</span>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Visibility stat from "Where Sky Meets Sea" */}
+          <motion.div
+            initial="hidden"
+            animate={lightInView ? "visible" : "hidden"}
+            variants={revealVariants.fadeUp}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="grid lg:grid-cols-2 gap-16 items-center"
+          >
+            <div className="relative group">
+              <div className="aspect-[16/10] overflow-hidden bg-muted">
+                <img
+                  src={kuwaitHorizon}
+                  alt="Kuwait horizon view"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"
+                />
+              </div>
+            </div>
+            <div className="space-y-6">
+              <p className="text-body-lg text-muted-foreground leading-relaxed">
+                {t("perspective.horizon.p1") || "From the upper observation levels, the tower offers commanding views that stretch across the entire city and far out over the Gulf waters."}
+              </p>
+              <div className="pt-4 border-t border-border">
+                <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                  {t("perspective.horizon.stat.label") || "Visibility Range"}
+                </p>
+                <p className="text-4xl font-light text-foreground mt-2">
+                  {t("perspective.horizon.stat.value") || "80+ km"}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

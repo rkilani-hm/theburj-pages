@@ -50,12 +50,7 @@ const Recognition = () => {
     },
   ];
 
-  const researchHighlights = [
-    { label: "Keywords", value: "Free Form Design, Sculpted Tower, Twisted Tower, Hyperbolic Paraboloid" },
-    { label: "Authors", value: "Mark Sarkisian, Neville Mathias, Aaron Mazeika (SOM)" },
-    { label: "Presented At", value: "Structural Engineers World Congress 2007" },
-    { label: "Publisher", value: "Council on Tall Buildings and Urban Habitat" },
-  ];
+  const keywords = ["Free Form Design", "Sculpted Tower", "Twisted Tower", "Hyperbolic Paraboloid"];
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -86,7 +81,7 @@ const Recognition = () => {
           </motion.div>
         </section>
 
-        {/* CTBUH Research Paper Highlight */}
+        {/* CTBUH Research Paper — Single Card Layout (#23) */}
         <section className="py-24 px-6 lg:px-12 bg-primary/5">
           <div className="container mx-auto max-w-4xl">
             <motion.div
@@ -98,31 +93,61 @@ const Recognition = () => {
               className="text-center mb-12"
             >
               <p className="text-sm uppercase tracking-widest text-primary mb-4">Published Research</p>
-              <h2 className="text-3xl lg:text-4xl font-light tracking-wide mb-6">
-                "Sculpted High Rise: The Al Hamra Tower"
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                The tower's innovative design and engineering were documented in a landmark research 
-                paper presented at the 2007 Structural Engineers World Congress, establishing new 
-                precedents for free-form high-rise design.
-              </p>
             </motion.div>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              {researchHighlights.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="p-6 border border-border bg-background"
-                >
-                  <p className="text-sm text-muted-foreground mb-2">{item.label}</p>
-                  <p className="font-light">{item.value}</p>
-                </motion.div>
-              ))}
-            </div>
+            {/* Single Research Card */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="p-8 lg:p-12 border border-border bg-background"
+            >
+              <h2 className="text-2xl lg:text-3xl font-semibold tracking-wide mb-3">
+                "Sculpted High Rise: The Al Hamra Tower"
+              </h2>
+              <p className="text-muted-foreground mb-6">
+                CTBUH Research Paper — Structural Engineers World Congress 2007
+              </p>
+              
+              {/* Metadata */}
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm text-muted-foreground mb-8">
+                <p><span className="font-medium text-foreground">Authors:</span> Mark Sarkisian, Neville Mathias, Aaron Mazeika (SOM)</p>
+                <span className="hidden sm:inline text-border">|</span>
+                <p><span className="font-medium text-foreground">Publisher:</span> Council on Tall Buildings and Urban Habitat</p>
+              </div>
+              
+              {/* Keywords */}
+              <div className="flex flex-wrap gap-3">
+                {keywords.map((keyword) => (
+                  <span 
+                    key={keyword}
+                    className="px-4 py-2 text-sm border border-border bg-muted/30 text-foreground"
+                  >
+                    {keyword}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Pull Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-12 p-8 lg:p-12 bg-muted/30"
+            >
+              <blockquote className="text-xl lg:text-2xl font-light leading-relaxed mb-6 italic">
+                "The design and construction of the Al Hamra Tower is a significant step forward 
+                both in terms of architectural design form and process. By blending conventional 
+                engineering tools with parametric modeling software, SOM has brought together the 
+                realms of free-form design and the super high-rise skyscraper."
+              </blockquote>
+              <cite className="text-muted-foreground not-italic">
+                — CTBUH Research Paper, Structural Engineers World Congress 2007
+              </cite>
+            </motion.div>
           </div>
         </section>
 
@@ -169,29 +194,6 @@ const Recognition = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Recognition Quote */}
-        <section className="py-24 px-6 lg:px-12 bg-muted/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <blockquote className="text-2xl lg:text-3xl font-light leading-relaxed mb-8">
-                "The design and construction of the Al Hamra Tower is a significant step forward 
-                both in terms of architectural design form and process. Blending the conventional 
-                tools of the engineer and the computer programmer and by leveraging the latest 
-                three-dimensional parametric modeling software, SOM has brought together the realms 
-                of free-form design and the super high-rise skyscraper."
-              </blockquote>
-              <cite className="text-muted-foreground">
-                — CTBUH Research Paper, Structural Engineers World Congress 2007
-              </cite>
             </motion.div>
           </div>
         </section>
@@ -279,6 +281,26 @@ const Recognition = () => {
                 />
                 <p className="text-xs text-grey-500 mt-3">Al Hamra Tower defining the Kuwait City skyline</p>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Project Collaborators */}
+        <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl font-light tracking-wide mb-12">Project Collaborators</h2>
+            <div className="grid md:grid-cols-4 gap-8">
+              {[
+                { name: "SOM", role: "Lead Architect & Engineer" },
+                { name: "VDA", role: "Associate Architect" },
+                { name: "Gehry Technologies", role: "Digital Project Software" },
+                { name: "Ahmadiah Contracting & Trading Co. KCSC", role: "General Contractor" },
+              ].map((collaborator) => (
+                <div key={collaborator.name} className="text-center">
+                  <p className="font-light">{collaborator.name}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{collaborator.role}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

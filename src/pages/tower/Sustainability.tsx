@@ -239,7 +239,7 @@ const Sustainability = () => {
           </div>
         </section>
 
-        {/* Energy Efficiency Grid */}
+        {/* Energy Efficiency Grid — "Performance by Design" with merged Safety content (#19) */}
         <section className="py-24 px-6 lg:px-12 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
@@ -266,6 +266,33 @@ const Sustainability = () => {
                   </p>
                 </motion.div>
               ))}
+            </div>
+
+            {/* Safety & Life Systems — merged from standalone section (#19) */}
+            <div className="mt-20">
+              <h3 className="text-2xl lg:text-3xl font-light tracking-wide text-center mb-12">
+                Safety & Life Systems
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {safetyFeatures.map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    className="flex gap-6 p-6 bg-background border-l-2 border-primary/30 hover:border-primary transition-colors duration-300"
+                  >
+                    <feature.icon className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
+                    <div>
+                      <h3 className="text-lg font-light mb-2">{feature.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -294,55 +321,7 @@ const Sustainability = () => {
           </div>
         </section>
 
-        {/* Safety & Systems Section */}
-        <section className="py-24 px-6 lg:px-12">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              <div>
-                <p className="text-sm uppercase tracking-widest text-primary mb-4">Safety & Systems</p>
-                <h2 className="text-3xl lg:text-4xl font-light tracking-wide mb-6">
-                  Intelligent Protection
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Beyond environmental sustainability, Al Hamra Tower integrates advanced safety 
-                  and building management systems designed specifically for supertall structures, 
-                  ensuring the wellbeing of thousands of daily occupants.
-                </p>
-                
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={somLobby}
-                    alt="Al Hamra Tower lobby"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                {safetyFeatures.map((feature, index) => (
-                  <motion.div
-                    key={feature.title}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
-                    className="flex gap-6 p-6 bg-muted/30 border-l-2 border-primary/30 hover:border-primary transition-colors duration-300"
-                  >
-                    <feature.icon className="w-8 h-8 text-primary flex-shrink-0" strokeWidth={1} />
-                    <div>
-                      <h3 className="text-lg font-light mb-2">{feature.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Safety Systems Infographic */}
+        {/* Safety Systems Infographic with Interactive Cross-Section */}
         <section className="py-24 px-6 lg:px-12 bg-charcoal-900 overflow-hidden">
           <div className="container mx-auto max-w-6xl">
             <div className="text-center mb-16">
@@ -402,28 +381,6 @@ const Sustainability = () => {
 
             {/* Interactive Tower Cross-Section */}
             <TowerCrossSection />
-          </div>
-        </section>
-
-        {/* Recognition Banner */}
-        <section className="py-20 px-6 lg:px-12 bg-muted/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <p className="text-sm uppercase tracking-widest text-muted-foreground mb-6">Recognition</p>
-              <h2 className="text-2xl lg:text-3xl font-light text-foreground mb-8">
-                CTBUH 10 Year Award 2021
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                A decade after completion, Al Hamra Tower was recognized by the Council on Tall 
-                Buildings and Urban Habitat for its enduring value, sustainable performance, and 
-                continued contribution to Kuwait's urban landscape.
-              </p>
-            </motion.div>
           </div>
         </section>
 

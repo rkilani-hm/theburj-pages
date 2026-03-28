@@ -50,7 +50,6 @@ const Downloads = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-px bg-border" />
-                <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">03</span>
               </div>
               <h1 className="text-4xl lg:text-5xl font-light tracking-tight mb-8">
                 {language === "en" ? "Downloads" : "التنزيلات"}

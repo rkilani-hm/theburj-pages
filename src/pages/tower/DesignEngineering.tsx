@@ -79,13 +79,6 @@ const DesignEngineering = () => {
     },
   ];
 
-  const analysisModels = [
-    { name: "Serviceability Model", purpose: "Wind drift criteria verification (Height/500)" },
-    { name: "Wind Design Model", purpose: "Core and frame design under lateral wind loads" },
-    { name: "Seismic Design Model", purpose: "Reinforcement layout verification" },
-    { name: "Torsional Creep Model", purpose: "Long-term gravity twist analysis" },
-  ];
-
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
@@ -171,7 +164,7 @@ const DesignEngineering = () => {
           </div>
         </section>
 
-        {/* Architectural Features */}
+        {/* Architectural Features — "Defining Elements" */}
         <section className="py-24 px-6 lg:px-12 bg-muted/30">
           <div className="container mx-auto max-w-6xl">
             <motion.div
@@ -203,8 +196,41 @@ const DesignEngineering = () => {
           </div>
         </section>
 
-        {/* Interactive Floor Plan Selector */}
+        {/* Technical Specifications — moved here per #11 */}
         <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={revealVariants.fadeUp}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <h2 className="text-3xl font-light tracking-wide text-center mb-16">
+                Technical Specifications
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8">
+                {specs.map((spec, index) => (
+                  <motion.div
+                    key={spec.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="p-6 border border-border bg-background text-center"
+                  >
+                    <p className="text-3xl font-light mb-2">{spec.value}</p>
+                    <p className="text-sm text-foreground mb-1">{spec.label}</p>
+                    <p className="text-xs text-muted-foreground">{spec.detail}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Interactive Floor Plan Selector */}
+        <section className="py-24 px-6 lg:px-12 bg-muted/30">
           <div className="container mx-auto max-w-5xl">
             <motion.div
               ref={floorPlanReveal.ref}
@@ -215,6 +241,53 @@ const DesignEngineering = () => {
             >
               <FloorPlanSelector />
             </motion.div>
+          </div>
+        </section>
+
+        {/* Arrival Experience — moved BEFORE Lobby per #10 */}
+        <section className="py-24 px-6 lg:px-12">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl font-light tracking-wide text-center mb-16">
+              Arrival Experience
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="md:col-span-2 md:row-span-2"
+              >
+                <img 
+                  src={entranceDusk} 
+                  alt="Tower Entrance at Dusk" 
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <img 
+                  src={entranceNightFacade} 
+                  alt="Entrance Night Facade" 
+                  className="w-full h-auto"
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <img 
+                  src={towerStreetContext} 
+                  alt="Tower Street Context" 
+                  className="w-full h-auto"
+                />
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -305,53 +378,6 @@ const DesignEngineering = () => {
           </div>
         </section>
 
-        {/* Entrance Gallery */}
-        <section className="py-24 px-6 lg:px-12">
-          <div className="container mx-auto max-w-6xl">
-            <h2 className="text-3xl font-light tracking-wide text-center mb-16">
-              Arrival Experience
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="md:col-span-2 md:row-span-2"
-              >
-                <img 
-                  src={entranceDusk} 
-                  alt="Tower Entrance at Dusk" 
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                <img 
-                  src={entranceNightFacade} 
-                  alt="Entrance Night Facade" 
-                  className="w-full h-auto"
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                <img 
-                  src={towerStreetContext} 
-                  alt="Tower Street Context" 
-                  className="w-full h-auto"
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* Observation Deck */}
         <section className="py-24 px-6 lg:px-12 bg-charcoal-900">
           <div className="container mx-auto max-w-6xl">
@@ -369,11 +395,11 @@ const DesignEngineering = () => {
                 <div className="flex gap-8 pt-4">
                   <div>
                     <p className="text-3xl font-light text-white">130<span className="text-lg">ft</span></p>
-                    <p className="text-sm text-grey-500">Observation Height</p>
+                    <p className="text-sm text-grey-400">Observation Height</p>
                   </div>
                   <div>
                     <p className="text-3xl font-light text-white">360°</p>
-                    <p className="text-sm text-grey-500">Panoramic Views</p>
+                    <p className="text-sm text-grey-400">Panoramic Views</p>
                   </div>
                 </div>
               </div>
@@ -388,7 +414,7 @@ const DesignEngineering = () => {
                   alt="Observation Deck" 
                   className="w-full h-auto"
                 />
-                <p className="text-xs text-grey-500 mt-3">Photo: Nick Merrick © Hedrich Blessing</p>
+                <p className="text-xs text-grey-400 mt-3">Photo: Nick Merrick © Hedrich Blessing</p>
               </motion.div>
             </div>
           </div>
@@ -411,74 +437,6 @@ const DesignEngineering = () => {
               <p className="text-sm text-muted-foreground mt-4 text-center">
                 Façade detail showing the interplay of stone cladding and glass curtain wall systems
               </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ═══════════════════════════════════════════════════════════════ */}
-        {/* STRUCTURAL ENGINEERING SECTION */}
-        {/* ═══════════════════════════════════════════════════════════════ */}
-
-        {/* Engineering Overview */}
-        <section className="py-24 px-6 lg:px-12 bg-muted/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={revealVariants.fadeUp}
-              transition={{ duration: 0.8 }}
-              className="space-y-6"
-            >
-              <p className="text-sm uppercase tracking-widest text-primary">SOM Structural Engineering</p>
-              <h2 className="text-3xl lg:text-4xl font-light tracking-wide">
-                Engineering Excellence
-              </h2>
-              <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                Al Hamra Tower's distinctive asymmetrical form presented unprecedented engineering 
-                challenges. The tower's twisted ribbon walls provide stunning visual impact, but 
-                their design is grounded in rigorous structural analysis—consciously maximizing 
-                views of the Arabian Gulf while minimizing solar heat gain.
-              </p>
-              <p className="text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                The design and construction represents a significant step forward both in terms of 
-                architectural design form and process. By leveraging the latest three-dimensional 
-                parametric modeling software, SOM brought together the realms of free-form design 
-                and the super high-rise skyscraper.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Specifications Grid */}
-        <section className="py-24 px-6 lg:px-12">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={revealVariants.fadeUp}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <h2 className="text-3xl font-light tracking-wide text-center mb-16">
-                Technical Specifications
-              </h2>
-              <div className="grid md:grid-cols-3 gap-8">
-                {specs.map((spec, index) => (
-                  <motion.div
-                    key={spec.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.05 }}
-                    className="p-6 border border-border bg-background text-center"
-                  >
-                    <p className="text-3xl font-light mb-2">{spec.value}</p>
-                    <p className="text-sm text-foreground mb-1">{spec.label}</p>
-                    <p className="text-xs text-muted-foreground">{spec.detail}</p>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
           </div>
         </section>
@@ -525,74 +483,6 @@ const DesignEngineering = () => {
           </div>
         </section>
 
-        {/* Analysis & Design Models */}
-        <section className="py-24 px-6 lg:px-12">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={revealVariants.fadeUp}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-3xl font-light tracking-wide text-center mb-6">
-                Analysis & Design Models
-              </h2>
-              <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16">
-                Four parallel 3D finite element analysis models were developed to verify structural 
-                performance under different loading conditions—a comprehensive approach essential 
-                for the tower's unprecedented geometry.
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {analysisModels.map((model, index) => (
-                  <motion.div
-                    key={model.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="p-6 border border-border bg-background"
-                  >
-                    <div className="w-12 h-12 bg-primary/10 flex items-center justify-center mb-4">
-                      <span className="text-primary font-light text-lg">{index + 1}</span>
-                    </div>
-                    <h3 className="text-lg font-light mb-2">{model.name}</h3>
-                    <p className="text-sm text-muted-foreground">{model.purpose}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Performance Stats */}
-        <section className="py-24 px-6 lg:px-12 bg-charcoal-900">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-light tracking-wide text-white mb-16">
-              Performance Metrics
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { value: "40%", label: "Solar Heat Reduction" },
-                { value: "H/500", label: "Wind Drift Criteria" },
-                { value: "15", label: "High-Speed Elevators" },
-                { value: "52s", label: "Ground to Top" },
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <p className="text-4xl font-light text-white mb-2">{stat.value}</p>
-                  <p className="text-sm text-grey-400">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Load Path Visualization */}
         <section className="py-24 px-6 lg:px-12">
           <div className="container mx-auto max-w-6xl">
@@ -635,51 +525,6 @@ const DesignEngineering = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Research Credit */}
-        <section className="py-24 px-6 lg:px-12 bg-muted/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <blockquote className="text-xl lg:text-2xl font-light leading-relaxed mb-8">
-                "The design and construction of the Al Hamra Tower is a significant step forward 
-                both in terms of architectural design form and process. By blending conventional 
-                engineering tools with parametric modeling software, SOM has brought together the 
-                realms of free-form design and the super high-rise skyscraper."
-              </blockquote>
-              <cite className="text-muted-foreground">
-                — CTBUH Research Paper, Structural Engineers World Congress 2007
-              </cite>
-              <p className="text-sm text-muted-foreground mt-4">
-                Authors: Mark Sarkisian, Neville Mathias, Aaron Mazeika (SOM)
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Collaborators */}
-        <section className="py-24 px-6 lg:px-12">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl font-light tracking-wide mb-12">Project Collaborators</h2>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                { name: "SOM", role: "Lead Architect & Engineer" },
-                { name: "VDA", role: "Associate Architect" },
-                { name: "Gehry Technologies", role: "Digital Project Software" },
-                { name: "Ahmadiah Contracting", role: "General Contractor" },
-              ].map((collaborator) => (
-                <div key={collaborator.name} className="text-center">
-                  <p className="font-light">{collaborator.name}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{collaborator.role}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>

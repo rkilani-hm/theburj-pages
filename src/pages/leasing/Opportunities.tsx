@@ -62,7 +62,6 @@ const LeasingOpportunities = () => {
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-px bg-border" />
-                  <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">06</span>
                 </div>
                 <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground mb-6 block">{t("leasing.subtitle")}</span>
                 <h1 className="text-4xl lg:text-6xl font-light tracking-tight mb-8">{t("leasing.title")}</h1>
