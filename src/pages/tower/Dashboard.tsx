@@ -4,7 +4,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import Header from "@/components/alhamra/Header";
 import DashboardHotspot from "@/components/alhamra/DashboardHotspot";
 import HotspotDetailModal from "@/components/alhamra/HotspotDetailModal";
-import SystemVitalityPanel from "@/components/alhamra/SystemVitalityPanel";
+
 import NetworkStatusPanel from "@/components/alhamra/NetworkStatusPanel";
 import DashboardFooter from "@/components/alhamra/DashboardFooter";
 import { motion } from "framer-motion";
@@ -186,8 +186,6 @@ const Dashboard = () => {
         language={language}
       />
 
-      {/* System Vitality Panel (Left) - Hidden on mobile */}
-      {!isMobile && <SystemVitalityPanel language={language} />}
 
       {/* Network Status Panel (Right) - Hidden on mobile */}
       {!isMobile && <NetworkStatusPanel language={language} />}
