@@ -53,7 +53,7 @@ const ContactSection = () => {
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-px bg-white/50" />
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide text-secondary-foreground">
                 {t("contact.title")}
               </h1>
             </motion.div>
