@@ -41,7 +41,8 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/tower" element={<PageTransition><Tower /></PageTransition>} />
-        <Route path="/tower/origins" element={<PageTransition><Origins /></PageTransition>} />
+        <Route path="/tower/origins" element={<Navigate to="/tower/rising" replace />} />
+        <Route path="/tower/rising" element={<PageTransition><Rising /></PageTransition>} />
         <Route path="/tower/rising" element={<PageTransition><Rising /></PageTransition>} />
         <Route path="/tower/design" element={<PageTransition><DesignEngineering /></PageTransition>} />
         <Route path="/tower/architecture" element={<Navigate to="/tower/design" replace />} />

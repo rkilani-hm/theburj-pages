@@ -31,7 +31,6 @@ const Header = () => {
 
   const towerSubItems = [
     { key: "nav.tower.overview", href: "/tower", label: { en: "Overview", ar: "نظرة عامة" } },
-    { key: "nav.tower.origins", href: "/tower/origins", label: { en: "Origins", ar: "البدايات" } },
     { key: "nav.tower.rising", href: "/tower/rising", label: { en: "Rising", ar: "الصعود" } },
     { key: "nav.tower.design", href: "/tower/design", label: { en: "Design & Engineering", ar: "التصميم والهندسة" } },
     { key: "nav.tower.recognition", href: "/tower/recognition", label: { en: "Awards & Recognition", ar: "الجوائز والتقدير" } },
