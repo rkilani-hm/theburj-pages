@@ -120,7 +120,7 @@ const Sustainability = () => {
                 <Leaf className="w-5 h-5" />
               <span className="text-sm uppercase tracking-widest">Environmental Strategy</span>
               </div>
-              <h1 className="text-4xl lg:text-6xl font-light tracking-wide text-foreground mb-6">
+              <h1 className="text-4xl lg:text-6xl tracking-wide text-foreground mb-6 font-sans font-semibold">
                 Sustainability & Innovation
               </h1>
               <p className="text-lg text-muted-foreground max-w-2xl">
