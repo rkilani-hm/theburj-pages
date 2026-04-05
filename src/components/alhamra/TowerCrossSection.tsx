@@ -298,7 +298,7 @@ const TowerCrossSection = () => {
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="text-white font-medium">
+                      <span className="font-medium text-primary">
                         Level {marker.level}
                       </span>
                       <span className="text-xs text-grey-500">•</span>
