@@ -355,7 +355,7 @@ const Sustainability = () => {
                 >
                   <stat.icon className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />
                   <motion.p 
-                    className="text-4xl lg:text-5xl font-light text-white mb-2 tabular-nums"
+                    className="text-4xl lg:text-5xl font-light text-foreground mb-2 tabular-nums"
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
